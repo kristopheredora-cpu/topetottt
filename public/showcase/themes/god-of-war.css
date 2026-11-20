@@ -1,0 +1,70 @@
+/* God of War showcase: runic stone tablets. Scoped to .theme-god-of-war.
+   Layout: a rune frieze, the cover and details on the left, a stat ribbon, achievements as stone tiles, a screenshot filmstrip. */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-god-of-war{--bone:#e8dcc4;--frost:#9ec7d9;--stone:#1a1413;background:#0d0909;font-family:"Inter",sans-serif}
+.theme-god-of-war h2,.theme-god-of-war h3,.theme-god-of-war .sc-ring-num,.theme-god-of-war .sc-stat strong{font-family:"Cinzel",serif}
+
+/* Hero */
+.theme-god-of-war .sc-hero::before{background:linear-gradient(90deg,#0d0909f0,#0d090970 55%,transparent),linear-gradient(0deg,#0d0909 0,#0d090900 62%),radial-gradient(520px 340px at 90% 0%,#9ec7d926,transparent),radial-gradient(760px 420px at 8% 100%,#d9382b44,transparent)}
+.theme-god-of-war .sc-title{font-family:"Cinzel",serif;font-weight:700;color:var(--bone);letter-spacing:.04em}
+.theme-god-of-war .sc-tagline{font:500 18px "Cinzel",serif;color:var(--bone);padding-left:14px;border-left:3px solid #d9382b}
+.theme-god-of-war .sc-back{border-radius:2px;border-color:#e8dcc433;color:var(--bone)}
+.theme-god-of-war .sc-btn{border-radius:2px;background:linear-gradient(180deg,#d9382b,#8f1d14);border:1px solid #e8dcc455;box-shadow:0 6px 24px #d9382b55,inset 0 1px 0 #ffffff26;font:600 15px "Cinzel",serif;letter-spacing:.04em}
+.theme-god-of-war .sc-btn.ghost{background:#0009;box-shadow:none;color:var(--bone)}
+.theme-god-of-war .sc-done-pill{border-radius:2px;font-family:"Cinzel",serif}
+
+/* Body: rune frieze across the top */
+.theme-god-of-war .sc-body::before{content:"ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ";grid-column:1/-1;overflow:hidden;white-space:nowrap;text-align:center;padding-bottom:12px;border-bottom:1px solid #3a1f1b;font-size:18px;letter-spacing:.8em;color:#d9382b55}
+.theme-god-of-war .sc-body h3{display:flex;align-items:center;gap:12px;font-size:21px;color:var(--bone)}
+.theme-god-of-war .sc-body h3::before{content:"ᛟ";color:#d9382b}
+.theme-god-of-war .sc-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#d9382b99,transparent)}
+.theme-god-of-war .sc-desc{color:#cdc3b3}
+.theme-god-of-war .sc-stats{gap:0;margin-bottom:28px;background:linear-gradient(180deg,#1b1514,#120d0c);border:1px solid #3a1f1b;border-top:3px solid #d9382b}
+.theme-god-of-war .sc-stat{border:0;border-right:1px solid #3a1f1b;border-radius:0;background:none;text-align:center;padding:18px 10px}
+.theme-god-of-war .sc-stat:last-child{border-right:0}
+.theme-god-of-war .sc-stat span{color:var(--frost)}
+.theme-god-of-war .sc-stat strong{font-size:20px;color:var(--bone)}
+.theme-god-of-war .sc-review{border-left-color:#d9382b;font-style:italic}
+.showcase.theme-god-of-war .sc-cover{border-radius:2px;border:1px solid #e8dcc466;outline:1px solid #d9382b66;outline-offset:6px;box-shadow:0 22px 60px #000b,0 0 50px #d9382b2e}
+.theme-god-of-war .sc-details{padding:16px;gap:12px;background:linear-gradient(180deg,#1b1514,#120d0c);border:1px solid #3a1f1b}
+.theme-god-of-war .sc-details dt{color:var(--frost)}
+.theme-god-of-war .sc-details dd{color:var(--bone)}
+
+/* Achievements: stone tiles; the description appears on hover */
+.theme-god-of-war .sc-ach{border-radius:2px;background:linear-gradient(160deg,#181010,#0f0a0a);border:1px solid #3a1f1b;outline:1px solid #ffffff0a;outline-offset:-6px}
+.showcase.done.theme-god-of-war .sc-ach{border-color:#f3c969;box-shadow:0 0 60px #f3c96930,inset 0 0 50px #f3c9690f}
+.showcase.theme-god-of-war:not(.done) .sc-ring .val{stroke:#d9382b;filter:drop-shadow(0 0 6px #d9382b99)}
+.theme-god-of-war .sc-ring .track{stroke:#e8dcc414}
+.theme-god-of-war .sc-complete{border-radius:2px;font-family:"Cinzel",serif;background:linear-gradient(90deg,#f3c96940,#f3c96908);color:#ffe9b3}
+.theme-god-of-war .sc-chip{border-radius:2px;font-family:"Cinzel",serif}
+.theme-god-of-war .sc-chip.active{background:#d9382b;border-color:#e8dcc455;color:#fff}
+.theme-god-of-war .sc-ach-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.theme-god-of-war .sc-ach-tile{position:relative;overflow:hidden;flex-direction:column;justify-content:center;gap:10px;min-height:150px;padding:18px 10px;text-align:center;border-radius:2px;border:1px solid #3a1f1b;background:linear-gradient(180deg,#1b1514,#120d0c)}
+.theme-god-of-war .sc-ach-tile img{width:58px;height:58px;border-radius:2px}
+.theme-god-of-war .sc-ach-tile strong{font-size:12px}
+.theme-god-of-war .sc-ach-tile small{position:absolute;inset:auto 0 0 0;padding:10px 8px;background:#0d0909f4;font-size:11px;opacity:0;transform:translateY(100%);transition:opacity .25s,transform .25s}
+.theme-god-of-war .sc-ach-tile:hover small{opacity:1;transform:none}
+.theme-god-of-war .sc-ach-tile .mark{position:absolute;top:8px;right:10px;font-size:13px;color:#d9382b}
+.theme-god-of-war .sc-ach-tile.unlocked{border-color:#d9382b66;background:linear-gradient(180deg,#26120f,#140c0b)}
+.showcase.done.theme-god-of-war .sc-ach-tile.unlocked{border-color:#f3c96966;background:linear-gradient(180deg,#241d0e,#140f07)}
+.showcase.done.theme-god-of-war .sc-ach-tile .mark{color:#f3c969}
+
+/* Screenshots: a filmstrip */
+.theme-god-of-war .sc-gallery-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+.theme-god-of-war .sc-gallery figure{flex:0 0 min(440px,82%);scroll-snap-align:start;border-radius:2px;border-color:#e8dcc433}
+
+@media(min-width:901px){
+  .theme-god-of-war .sc-body{grid-template-columns:320px minmax(0,1fr)}
+  .theme-god-of-war .sc-body::before{grid-row:1}
+  .theme-god-of-war .sc-aside{grid-column:1;grid-row:2;position:sticky;top:24px;align-self:start}
+  .theme-god-of-war .sc-body>div:first-child{grid-column:2;grid-row:2;display:flex;flex-direction:column;min-width:0}
+  .theme-god-of-war .sc-stats{order:-3}
+  .theme-god-of-war .sc-body>div>h3:first-child{order:-2}
+  .theme-god-of-war .sc-desc{order:-1}
+}
+
+/* Library card */
+.showcase-card.theme-god-of-war{border-bottom-color:#d9382b}
+.showcase-card.theme-god-of-war .card-badge{border-radius:2px;font-family:"Cinzel",serif}
+.showcase-card.theme-god-of-war.done{border-bottom-color:#f3c969}

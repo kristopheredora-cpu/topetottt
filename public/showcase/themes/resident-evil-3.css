@@ -1,0 +1,73 @@
+/* Resident Evil 3 showcase: a S.T.A.R.S. field briefing. Scoped to .theme-resident-evil-3.
+   Layout: a briefing header with a hazard stripe, a status bar, a numbered objectives checklist, and a classified dossier on the right. */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-resident-evil-3{--concrete:#dfe6e9;--cyan:#0abde3;--orange:#ff4719;background:#090a0c;font-family:"Inter",sans-serif}
+.theme-resident-evil-3 h2,.theme-resident-evil-3 h3,.theme-resident-evil-3 .sc-ring-num,.theme-resident-evil-3 .sc-stat strong{font-family:"Teko",sans-serif;text-transform:uppercase}
+
+/* Hero: siren orange against the cold city night */
+.theme-resident-evil-3 .sc-hero::before{background:linear-gradient(90deg,#090a0cf0,#090a0c70 55%,transparent),linear-gradient(0deg,#090a0c 0,#090a0c00 62%),radial-gradient(600px 300px at 85% 0%,#0abde31a,transparent),radial-gradient(800px 500px at 10% 100%,#ff471933,transparent)}
+.theme-resident-evil-3 .sc-title{font:700 clamp(48px,9vw,96px) "Teko",sans-serif;color:#fff;letter-spacing:.02em;text-shadow:2px 2px 0 var(--orange),-2px -2px 0 var(--cyan)}
+.theme-resident-evil-3 .sc-tagline{font:500 24px "Teko",sans-serif;letter-spacing:.04em;color:var(--concrete);padding-left:12px;border-left:4px solid var(--orange)}
+.theme-resident-evil-3 .sc-back{border-radius:0;border-color:#dfe6e933;color:var(--concrete);background:#000c}
+.theme-resident-evil-3 .sc-btn{border-radius:0;background:var(--orange);border:1px solid var(--orange);color:#000;box-shadow:4px 4px 0 #0abde355;font:600 20px "Teko",sans-serif;letter-spacing:.06em;padding:8px 20px}
+.theme-resident-evil-3 .sc-btn.ghost{background:#000c;border-color:#dfe6e944;color:var(--concrete);box-shadow:none}
+.theme-resident-evil-3 .sc-done-pill{border-radius:0;font:600 20px "Teko",sans-serif;letter-spacing:.06em;background:#f3c969;color:#000}
+
+/* Briefing header across the top of the body */
+.theme-resident-evil-3 .sc-body::before{content:"S.T.A.R.S. FIELD BRIEFING // RACCOON CITY // 09-28-1998";grid-column:1/-1;padding:12px 0 18px;font:600 21px "Teko",sans-serif;letter-spacing:.14em;color:var(--concrete);background:repeating-linear-gradient(-45deg,#ff4719 0 10px,#090a0c 10px 20px) bottom/100% 6px no-repeat}
+.theme-resident-evil-3 .sc-body h3{display:flex;align-items:center;gap:12px;font-size:30px;letter-spacing:.06em;color:#fff}
+.theme-resident-evil-3 .sc-body h3::before{content:"";width:12px;height:12px;background:var(--orange)}
+.theme-resident-evil-3 .sc-desc{color:#b2bec3}
+
+/* Status bar */
+.theme-resident-evil-3 .sc-stats{gap:0;background:#111317;border:1px solid #ffffff1a}
+.theme-resident-evil-3 .sc-stat{padding:14px 16px;border:0;border-left:4px solid var(--orange);border-right:1px solid #ffffff12;border-radius:0;background:none}
+.theme-resident-evil-3 .sc-stat:last-child{border-right:0}
+.theme-resident-evil-3 .sc-stat span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.theme-resident-evil-3 .sc-stat strong{font-size:32px;color:#fff}
+.theme-resident-evil-3 .sc-review{border-left-color:var(--cyan);background:#0abde30d;border-radius:0}
+
+/* Classified dossier */
+.theme-resident-evil-3 .sc-aside{gap:20px}
+.theme-resident-evil-3 .sc-aside::before{content:"CLASSIFIED";justify-self:center;padding:0 16px;font:700 34px "Teko",sans-serif;letter-spacing:.22em;color:var(--orange);border:3px solid var(--orange);transform:rotate(-4deg)}
+.showcase.theme-resident-evil-3 .sc-cover{border-radius:0;border:2px solid #111317;box-shadow:8px 8px 0 #ff471944,-8px -8px 0 #0abde322}
+.theme-resident-evil-3 .sc-details{gap:0;border-top:1px solid #ffffff1a}
+.theme-resident-evil-3 .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #ffffff12}
+.theme-resident-evil-3 .sc-details dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.theme-resident-evil-3 .sc-details dd{margin:0;text-align:right;color:var(--concrete)}
+
+/* Achievements: a numbered objectives checklist */
+.theme-resident-evil-3 .sc-ach{border-radius:0;background:#111317;border:1px solid #ffffff1a;background-image:repeating-linear-gradient(45deg,#111317 0,#111317 10px,#15181d 10px,#15181d 20px)}
+.showcase.done.theme-resident-evil-3 .sc-ach{border-color:#f3c969;box-shadow:0 0 30px #f3c96920}
+.showcase.theme-resident-evil-3:not(.done) .sc-ring .val{stroke:var(--orange);filter:drop-shadow(0 0 6px #ff471966)}
+.theme-resident-evil-3 .sc-ring .track{stroke:#ffffff1a}
+.theme-resident-evil-3 .sc-ring-num{font-size:32px}
+.theme-resident-evil-3 .sc-complete{border-radius:0;font:500 22px "Teko",sans-serif;background:#f3c96926;border:0;border-left:4px solid #f3c969;color:#f3c969}
+.theme-resident-evil-3 .sc-chip{border-radius:0;font:500 18px "Teko",sans-serif;letter-spacing:.04em}
+.theme-resident-evil-3 .sc-chip.active{background:var(--cyan);border-color:var(--cyan);color:#000}
+.theme-resident-evil-3 .sc-ach-grid{grid-template-columns:1fr;gap:0;counter-reset:obj}
+.theme-resident-evil-3 .sc-ach-tile{position:relative;counter-increment:obj;padding:10px 14px 10px 56px;border:0;border-bottom:1px solid #ffffff12;border-radius:0;background:none}
+.theme-resident-evil-3 .sc-ach-tile::before{content:counter(obj,decimal-leading-zero);position:absolute;left:14px;top:50%;translate:0 -50%;font:600 22px "Teko",sans-serif;color:#636e72}
+.theme-resident-evil-3 .sc-ach-tile.unlocked::before{color:var(--cyan)}
+.showcase.done.theme-resident-evil-3 .sc-ach-tile.unlocked::before{color:#f3c969}
+.theme-resident-evil-3 .sc-ach-tile img{border-radius:0}
+.theme-resident-evil-3 .sc-ach-tile .mark{display:grid;place-items:center;width:22px;height:22px;flex:none;font-size:0;border:2px solid #636e72}
+.theme-resident-evil-3 .sc-ach-tile.unlocked .mark{background:var(--cyan);border-color:var(--cyan)}
+.showcase.done.theme-resident-evil-3 .sc-ach-tile.unlocked .mark{background:#f3c969;border-color:#f3c969}
+.theme-resident-evil-3 .sc-ach-tile.unlocked .mark::after{content:"✓";font:700 14px "Inter",sans-serif;color:#000}
+.theme-resident-evil-3 .sc-gallery figure{border-radius:0;border:1px solid #ffffff22}
+
+@media(min-width:901px){
+  .theme-resident-evil-3 .sc-body{grid-template-columns:minmax(0,1fr) 330px}
+  .theme-resident-evil-3 .sc-body>div:first-child{display:flex;flex-direction:column}
+  .theme-resident-evil-3 .sc-stats{order:-3}
+  .theme-resident-evil-3 .sc-body>div>h3:first-child{order:-2}
+  .theme-resident-evil-3 .sc-desc{order:-1}
+  .theme-resident-evil-3 .sc-aside{position:sticky;top:24px;align-self:start}
+}
+
+/* Library card */
+.showcase-card.theme-resident-evil-3{border-bottom-color:#ff4719}
+.showcase-card.theme-resident-evil-3 .card-badge{border-radius:0;font-family:"Teko",sans-serif;font-size:14px;background:#ff4719;letter-spacing:.04em}
+.showcase-card.theme-resident-evil-3.done{border-bottom-color:#f3c969}

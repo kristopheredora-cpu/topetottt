@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07050f">
+  <meta name="description" content="TOPETOTTT: a personal Steam gaming portfolio and game tracker.">
+  <title>Top 5 — TOPETOTTT</title>
+  <script>(function(d){var m=!matchMedia("(prefers-reduced-motion: reduce)").matches;if("IntersectionObserver"in window&&m)d.classList.add("reveal-on");try{if(m&&(location.search.indexOf("intro")>-1||!sessionStorage.getItem("introSeen"))){d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},8000)}}catch(e){}})(document.documentElement)</script>
+  <link rel="stylesheet" href="/styles.css?v=18">
+</head>
+<body data-page="top5">
+  <main>
+    <header class="page-head head-row reveal">
+      <div><p class="eyebrow">My library</p><h1 class="page-title">Top 5</h1></div>
+      <span class="section-note">Current favorites</span>
+    </header>
+    <div class="sx reveal">
+      <div id="top5-list" class="sx-list"><p class="muted">Loading top 5…</p></div>
+      <div id="top5-preview" class="sx-preview" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <script src="/shell.js?v=18" defer></script>
+  <script src="/app.js" defer></script>
+  <script src="/dialog.js?v=14" defer></script>
+  <script src="/top5.js" defer></script>
+  <script src="/showcase/manifest.js" defer></script>
+  <script src="/showcase/showcase.js?v=17" defer></script>
+</body>
+</html>

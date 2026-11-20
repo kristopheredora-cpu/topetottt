@@ -1,0 +1,74 @@
+/* Resident Evil 2 showcase: a Raccoon Police Department case file. Scoped to .theme-resident-evil-2.
+   Layout: paper index cards for the stats, an evidence photo taped on the right, an evidence log for achievements, pinned photos. */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-resident-evil-2{--paper:#d8d1bd;--red:#b3202a;--amber:#d9a441;background:#070a09;font-family:"Inter",sans-serif}
+.theme-resident-evil-2 h2,.theme-resident-evil-2 h3,.theme-resident-evil-2 .sc-ring-num,.theme-resident-evil-2 .sc-stat strong{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.06em}
+
+/* Hero: green-black grade, the RPD's red and blue lights pulsing in the corners */
+.theme-resident-evil-2 .sc-hero{overflow:hidden}
+.theme-resident-evil-2 .sc-hero-art{filter:grayscale(.3) contrast(1.1) brightness(.88)}
+.theme-resident-evil-2 .sc-hero::before{background:linear-gradient(90deg,#070a09f2,#070a0980 55%,transparent),linear-gradient(0deg,#070a09 0,#070a0900 62%)}
+.theme-resident-evil-2 .sc-top::before,.theme-resident-evil-2 .sc-top::after{content:"";position:absolute;top:-130px;width:560px;height:420px;border-radius:50%;filter:blur(34px);pointer-events:none;z-index:-1;animation:rpd-light 3.2s ease-in-out infinite alternate}
+.theme-resident-evil-2 .sc-top::before{left:-150px;background:radial-gradient(circle,#b3202a77,transparent 66%)}
+.theme-resident-evil-2 .sc-top::after{right:-150px;background:radial-gradient(circle,#3b6ea577,transparent 66%);animation-delay:-1.6s}
+@keyframes rpd-light{from{opacity:.12}to{opacity:.95}}
+.theme-resident-evil-2 .sc-hero-body::before{content:"RACCOON POLICE DEPARTMENT · CASE FILE";display:block;margin-bottom:14px;font:700 12px "Courier Prime",monospace;letter-spacing:.24em;color:var(--red)}
+.theme-resident-evil-2 .sc-title{font:700 clamp(44px,8vw,88px) "Oswald",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--paper);text-shadow:0 0 26px #b3202a88,0 3px 0 #000}
+.theme-resident-evil-2 .sc-tagline{font:700 16px "Courier Prime",monospace;color:var(--amber)}
+.theme-resident-evil-2 .sc-tagline::before{content:"> ";color:var(--red)}
+.theme-resident-evil-2 .sc-back{border-radius:2px;border-color:#d8d1bd44;color:var(--paper);font-family:"Courier Prime",monospace}
+.theme-resident-evil-2 .sc-btn{border-radius:2px;background:linear-gradient(180deg,#b3202a,#6e1219);border:1px solid #d8d1bd33;color:var(--paper);box-shadow:0 6px 22px #b3202a55;font:600 16px "Oswald",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.theme-resident-evil-2 .sc-btn.ghost{background:#000a;border-color:#d9a44188;color:var(--amber);box-shadow:none}
+.theme-resident-evil-2 .sc-done-pill{border-radius:2px;font:600 16px "Oswald",sans-serif;letter-spacing:.08em;text-transform:uppercase;background:var(--amber);color:#14100a;box-shadow:0 0 24px #d9a44188}
+
+/* Body */
+.theme-resident-evil-2 .sc-body h3{font-size:24px;color:var(--paper);border-bottom:1px solid #d8d1bd24;padding-bottom:8px}
+.theme-resident-evil-2 .sc-desc{color:#b9b5a6;font:15px/1.8 "Courier Prime",monospace}
+.theme-resident-evil-2 .sc-stats{gap:14px}
+.theme-resident-evil-2 .sc-stat{padding:14px 14px 16px;border:0;border-top:6px solid var(--red);border-radius:2px;background:var(--paper);box-shadow:0 8px 18px #000a;transform:rotate(-.8deg)}
+.theme-resident-evil-2 .sc-stat:nth-child(even){transform:rotate(.8deg)}
+.theme-resident-evil-2 .sc-stat span{font:700 11px "Courier Prime",monospace;letter-spacing:.1em;text-transform:uppercase;color:#7a1a22}
+.theme-resident-evil-2 .sc-stat strong{font-size:22px;color:#14100a}
+.theme-resident-evil-2 .sc-review{border-left:3px solid var(--red);font-family:"Courier Prime",monospace;color:#cfc9b6}
+
+/* Evidence photo, taped up */
+.theme-resident-evil-2 .sc-aside{position:relative;padding-top:20px}
+.theme-resident-evil-2 .sc-aside::before{content:"";position:absolute;top:6px;left:50%;z-index:2;width:96px;height:26px;margin-left:-48px;background:#d9a44199;transform:rotate(-3deg)}
+.showcase.theme-resident-evil-2 .sc-cover{border-radius:1px;border:8px solid var(--paper);border-bottom-width:26px;transform:rotate(-1.4deg);box-shadow:0 22px 50px #000d,0 0 40px #b3202a2e}
+.theme-resident-evil-2 .sc-details{gap:0}
+.theme-resident-evil-2 .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dotted #d8d1bd55}
+.theme-resident-evil-2 .sc-details dt{font:700 11px "Courier Prime",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.theme-resident-evil-2 .sc-details dd{margin:0;text-align:right;font:13px "Courier Prime",monospace;color:var(--paper)}
+
+/* Achievements: the evidence log */
+.theme-resident-evil-2 .sc-ach{position:relative;margin-top:20px;border-radius:2px;border:1px solid #3a3524;background-color:#0b0e0b;background-image:repeating-linear-gradient(0deg,transparent 0 27px,#d8d1bd08 27px 28px)}
+.theme-resident-evil-2 .sc-ach::before{content:"RPD // ACHIEVEMENT RECORDS";position:absolute;top:-13px;left:18px;padding:4px 12px;background:var(--amber);color:#14100a;font:700 11px "Courier Prime",monospace;letter-spacing:.12em}
+.showcase.done.theme-resident-evil-2 .sc-ach{border-color:var(--amber);box-shadow:0 0 50px #d9a44122}
+.showcase.theme-resident-evil-2:not(.done) .sc-ring .val{stroke:var(--red);filter:drop-shadow(0 0 7px #b3202a99)}
+.theme-resident-evil-2 .sc-ring .track{stroke:#d8d1bd18}
+.theme-resident-evil-2 .sc-ach-head p{font-family:"Courier Prime",monospace}
+.theme-resident-evil-2 .sc-complete{display:inline-block;border:2px solid #d4343e;border-radius:3px;background:transparent;color:#e0545c;font:700 14px "Courier Prime",monospace;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1.6deg)}
+.theme-resident-evil-2 .sc-chip{border-radius:2px;font-family:"Courier Prime",monospace;font-weight:700}
+.theme-resident-evil-2 .sc-chip.active{background:var(--amber);border-color:var(--amber);color:#14100a}
+.theme-resident-evil-2 .sc-ach-grid{grid-template-columns:1fr;gap:0}
+.theme-resident-evil-2 .sc-ach-tile{padding:10px 6px;border:0;border-bottom:1px dotted #d8d1bd33;border-radius:0;background:none}
+.theme-resident-evil-2 .sc-ach-tile:nth-child(odd){background:#ffffff05}
+.theme-resident-evil-2 .sc-ach-tile img{border-radius:2px}
+.theme-resident-evil-2 .sc-ach-tile .mark{font-size:0}
+.theme-resident-evil-2 .sc-ach-tile .mark::after{content:"MISSING";padding:2px 8px;font:700 11px "Courier Prime",monospace;letter-spacing:.14em;color:#6b6a60;border:1px solid #6b6a60}
+.theme-resident-evil-2 .sc-ach-tile.unlocked .mark::after{content:"LOGGED";color:#e0545c;border-color:#e0545c;display:inline-block;transform:rotate(-3deg)}
+.showcase.done.theme-resident-evil-2 .sc-ach-tile.unlocked .mark::after{color:var(--amber);border-color:var(--amber)}
+
+/* Pinned photos */
+.theme-resident-evil-2 .sc-gallery figure{position:relative;overflow:visible;border:6px solid var(--paper);border-bottom-width:20px;border-radius:1px;filter:grayscale(.2) contrast(1.05);box-shadow:0 8px 18px #000a}
+.theme-resident-evil-2 .sc-gallery figure::before{content:"";position:absolute;top:-14px;left:50%;z-index:2;width:64px;height:20px;margin-left:-32px;background:#d9a44199;transform:rotate(-2deg)}
+.theme-resident-evil-2 .sc-gallery figure:nth-child(odd){transform:rotate(-.8deg)}
+.theme-resident-evil-2 .sc-gallery figure:nth-child(even){transform:rotate(.8deg)}
+.theme-resident-evil-2 .sc-gallery figure.zoom{transform:none}
+.theme-resident-evil-2 .sc-gallery figure:hover img{transform:none}
+
+/* Library card */
+.showcase-card.theme-resident-evil-2{border-bottom-color:#b3202a}
+.showcase-card.theme-resident-evil-2 .card-badge{border-radius:2px;background:#d9a441;color:#14100a;font-family:"Courier Prime",monospace}
+.showcase-card.theme-resident-evil-2.done{border-bottom-color:#d9a441}

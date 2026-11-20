@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07050f">
+  <meta name="description" content="TOPETOTTT: a personal Steam gaming portfolio and game tracker.">
+  <title>Library — TOPETOTTT</title>
+  <script>(function(d){var m=!matchMedia("(prefers-reduced-motion: reduce)").matches;if("IntersectionObserver"in window&&m)d.classList.add("reveal-on");try{if(m&&(location.search.indexOf("intro")>-1||!sessionStorage.getItem("introSeen"))){d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},8000)}}catch(e){}})(document.documentElement)</script>
+  <link rel="stylesheet" href="/styles.css?v=18">
+</head>
+<body data-page="library">
+  <main>
+    <header class="page-head head-row reveal">
+      <div><p class="eyebrow">The collection</p><h1 class="page-title">Library</h1></div>
+      <span id="library-count" class="section-note">Loading…</span>
+    </header>
+    <div id="lib-chips" class="chips-row lib-chips reveal">
+      <button class="chip active" data-source="all">All</button>
+      <button class="chip" data-source="owned">Owned</button>
+      <button class="chip" data-source="family">Family Shared</button>
+      <button class="chip" data-source="showcase">Showcased</button>
+    </div>
+    <div class="toolbar reveal">
+      <input id="search-input" type="search" placeholder="Search your games…" aria-label="Search games">
+      <select id="sort-select" aria-label="Sort games">
+        <option value="playtime">Most played</option>
+        <option value="name">Name A–Z</option>
+        <option value="recent">Recently played first</option>
+      </select>
+      <select id="status-filter" aria-label="Filter by tracker status">
+        <option value="all">All statuses</option>
+        <option value="backlog">Backlog</option>
+        <option value="playing">Playing</option>
+        <option value="completed">Completed</option>
+        <option value="paused">Paused</option>
+        <option value="dropped">Dropped</option>
+        <option value="untracked">Not tracked yet</option>
+      </select>
+      <label class="size-ctl">Size<input id="poster-size" type="range" min="120" max="260" value="172" aria-label="Poster size"></label>
+    </div>
+    <div id="library-grid" class="poster-grid reveal"><p class="muted">Loading library…</p></div>
+    <button id="load-more" class="button button-secondary load-more hidden">Load more games</button>
+  </main>
+
+  <script src="/shell.js?v=18" defer></script>
+  <script src="/app.js" defer></script>
+  <script src="/dialog.js?v=14" defer></script>
+  <script src="/library.js?v=16" defer></script>
+  <script src="/showcase/manifest.js" defer></script>
+  <script src="/showcase/showcase.js?v=17" defer></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Red Dead Redemption 2 showcase: a frontier newspaper with a wanted poster. Scoped to .theme-red-dead-redemption-2.
+   The body is a sheet of aged paper that overlaps the photo; achievements are a ledger. */
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+.showcase.theme-red-dead-redemption-2{--sheet-w:1240px;--parch:#e6d3a8;--ink:#2a1c10;--brass:#8a5a1a;--blood:#7a1c1c;background:#140e08;font-family:"Lora",serif}
+.theme-red-dead-redemption-2 h2,.theme-red-dead-redemption-2 h3{font-family:"Rye",serif;font-weight:400}
+
+/* Hero: dark sepia photograph */
+.theme-red-dead-redemption-2 .sc-hero{min-height:min(60vh,540px)}
+.theme-red-dead-redemption-2 .sc-hero-art{filter:sepia(.35) saturate(1.1) contrast(1.05)}
+.theme-red-dead-redemption-2 .sc-hero::before{background:linear-gradient(90deg,#140e08ee,#140e0870 55%,transparent),linear-gradient(0deg,#140e08 0,#140e0800 62%),radial-gradient(700px 360px at 85% 8%,#e8a24d40,transparent)}
+.theme-red-dead-redemption-2 .sc-title{font-family:"Rye",serif;font-weight:400;color:var(--parch);text-shadow:0 3px 0 #5a2f12,0 8px 30px #000}
+.theme-red-dead-redemption-2 .sc-tagline{font:17px "Special Elite",monospace;color:var(--parch)}
+.theme-red-dead-redemption-2 .sc-back{border-radius:3px;border:1px dashed #d4a24c99;color:var(--parch);font-family:"Special Elite",monospace}
+.theme-red-dead-redemption-2 .sc-btn{border-radius:4px;background:linear-gradient(180deg,#e2b865,#a8782d);color:var(--ink);border:1px solid #5a3a12;box-shadow:0 4px 0 #5a3a12,0 10px 24px #0008;font:400 15px "Rye",serif;letter-spacing:.03em}
+.theme-red-dead-redemption-2 .sc-btn.ghost{background:#140e08cc;color:var(--parch);border:1px dashed #d4a24c99;box-shadow:none}
+.theme-red-dead-redemption-2 .sc-done-pill{border-radius:3px;font:400 14px "Rye",serif;border:1px solid #5a3a12}
+
+/* Hero text lines up with the left edge of the paper, and clears the 60px the paper overlaps the photo */
+.theme-red-dead-redemption-2 .sc-top,.theme-red-dead-redemption-2 .sc-hero-body{padding-left:max(clamp(18px,4vw,56px),calc((100% - var(--sheet-w)) / 2))}
+.theme-red-dead-redemption-2 .sc-hero-body{padding-bottom:116px}
+
+/* The newspaper sheet */
+.theme-red-dead-redemption-2 .sc-body{position:relative;z-index:2;width:min(var(--sheet-w),calc(100% - 2 * clamp(14px,4vw,56px)));margin:-60px auto 70px;padding:34px clamp(20px,4vw,52px) 56px;color:var(--ink);
+  background-color:#e3cf9f;background-image:radial-gradient(#6b4a1f14 1px,transparent 1px),linear-gradient(180deg,#ecdcb0,#dcc590);background-size:5px 5px,100% 100%;
+  border:1px solid #8a6a3a;box-shadow:0 30px 80px #000c,inset 0 0 140px #8a6a3a55}
+.theme-red-dead-redemption-2 .sc-body::before{content:"THE FRONTIER GAZETTE";grid-column:1/-1;margin-bottom:6px;padding:10px 0;text-align:center;font:400 14px "Rye",serif;letter-spacing:.4em;color:var(--ink);border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
+.theme-red-dead-redemption-2 .sc-body h3{font-size:24px;color:var(--ink)}
+.theme-red-dead-redemption-2 .sc-desc{max-width:none;column-count:2;column-gap:38px;column-rule:1px solid #8a6a3a77;text-align:justify;color:#3a2814;font-size:15px}
+.theme-red-dead-redemption-2 .sc-desc::first-letter{float:left;padding:6px 10px 0 0;font:400 56px/.85 "Rye",serif;color:var(--blood)}
+.theme-red-dead-redemption-2 .sc-stats{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);gap:0}
+.theme-red-dead-redemption-2 .sc-stat{border:0;border-right:1px dotted #6b4a1f;border-radius:0;background:none;transform:none;box-shadow:none;text-align:center}
+.theme-red-dead-redemption-2 .sc-stat:last-child{border-right:0}
+.theme-red-dead-redemption-2 .sc-stat span{font:12px "Special Elite",monospace;color:var(--brass)}
+.theme-red-dead-redemption-2 .sc-stat strong{font:400 20px "Special Elite",monospace;color:var(--ink)}
+.theme-red-dead-redemption-2 .sc-review{border-left:3px solid var(--blood);font:italic 16px "Lora",serif;color:#3a2814}
+.theme-red-dead-redemption-2 .sc-review small,.theme-red-dead-redemption-2 .muted{color:#6b4a1f}
+
+/* Wanted poster */
+.theme-red-dead-redemption-2 .sc-aside{padding:18px;border:3px double var(--ink);background:#e9d8ae;text-align:center}
+.theme-red-dead-redemption-2 .sc-aside::before{content:"WANTED";font:400 38px "Rye",serif;letter-spacing:.12em;color:var(--ink)}
+.theme-red-dead-redemption-2 .sc-aside::after{content:"FOR THE RECORD";font:12px "Special Elite",monospace;letter-spacing:.24em;color:var(--blood)}
+.showcase.theme-red-dead-redemption-2 .sc-cover{border-radius:0;border:3px solid var(--ink);filter:sepia(.55) contrast(1.05);box-shadow:none}
+.theme-red-dead-redemption-2 .sc-details dt{font:12px "Special Elite",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+.theme-red-dead-redemption-2 .sc-details dd{color:var(--ink)}
+
+/* Achievements: the ledger */
+.theme-red-dead-redemption-2 .sc-ach{border-radius:0;background:#d2b97f55;border:2px solid var(--ink);outline:1px solid var(--ink);outline-offset:-6px;box-shadow:none;color:var(--ink)}
+.showcase.done.theme-red-dead-redemption-2 .sc-ach{border-color:var(--blood);outline-color:var(--blood);box-shadow:none}
+.theme-red-dead-redemption-2 .sc-ach-head p{color:#5a4326;font-family:"Special Elite",monospace}
+.theme-red-dead-redemption-2 .sc-ring .track{stroke:#2a1c1022}
+.showcase.theme-red-dead-redemption-2 .sc-ring .val{stroke:var(--blood);filter:none}
+.theme-red-dead-redemption-2 .sc-ring-num{color:var(--ink);font-family:"Rye",serif}
+.theme-red-dead-redemption-2 .sc-complete{display:inline-block;border:3px double var(--blood);border-radius:0;background:none;color:var(--blood);font:400 15px "Rye",serif;transform:rotate(-1.5deg)}
+.theme-red-dead-redemption-2 .sc-chip{border-radius:0;background:#00000010;border:1px solid #6b4a1f;color:var(--ink);font-family:"Special Elite",monospace}
+.theme-red-dead-redemption-2 .sc-chip.active{background:var(--ink);border-color:var(--ink);color:var(--parch)}
+.theme-red-dead-redemption-2 .sc-ach-grid{grid-template-columns:1fr 1fr;gap:0 30px}
+.theme-red-dead-redemption-2 .sc-ach-tile{border:0;border-bottom:1px dotted #6b4a1f;border-radius:0;background:none;color:var(--ink)}
+.theme-red-dead-redemption-2 .sc-ach-tile strong{color:var(--ink)}
+.theme-red-dead-redemption-2 .sc-ach-tile small{color:#5a4326}
+.theme-red-dead-redemption-2 .sc-ach-tile.locked strong{color:#6b4a1f}
+.theme-red-dead-redemption-2 .sc-ach-tile.locked img{filter:grayscale(1) sepia(.5);opacity:.45}
+.theme-red-dead-redemption-2 .sc-ach-tile .mark,.showcase.done.theme-red-dead-redemption-2 .sc-ach-tile .mark{color:var(--blood)}
+.theme-red-dead-redemption-2 .sc-ach-tile img{border-radius:2px}
+.theme-red-dead-redemption-2 .notice{color:var(--ink);background:#00000010;border-color:#8a6a3a}
+
+/* Photographs */
+.theme-red-dead-redemption-2 .sc-gallery figure{border-radius:0;border:6px solid #f4e9cd;border-bottom-width:20px;box-shadow:0 8px 20px #0006;filter:sepia(.4)}
+.theme-red-dead-redemption-2 .sc-gallery figure:nth-child(odd){transform:rotate(-.7deg)}
+.theme-red-dead-redemption-2 .sc-gallery figure:nth-child(even){transform:rotate(.7deg)}
+.theme-red-dead-redemption-2 .sc-gallery figure.zoom{transform:none}
+
+@media(max-width:900px){
+  .theme-red-dead-redemption-2 .sc-desc{column-count:1}
+  .theme-red-dead-redemption-2 .sc-ach-grid{grid-template-columns:1fr}
+}
+
+/* Library card */
+.showcase-card.theme-red-dead-redemption-2{border:1px dashed #d4a24c99}
+.showcase-card.theme-red-dead-redemption-2 .card-badge{background:#d4a24c;color:#2a1c10;border-radius:2px;font-family:"Special Elite",monospace}
+.showcase-card.theme-red-dead-redemption-2.done{border:1px solid #f3c969}

@@ -1,0 +1,64 @@
+/* Resident Evil 4 showcase: the attaché case. Scoped to .theme-resident-evil-4.
+   Layout: graph-paper background, the merchant's panel on the right, stats as inventory slots,
+   achievements as a grid of inventory cells, a laser sight under every heading. */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-resident-evil-4{--blood:#bd1c1c;--amber:#e0b25a;--leather:#12090b;background:#060406;font-family:"Inter",sans-serif}
+.theme-resident-evil-4 h2,.theme-resident-evil-4 h3,.theme-resident-evil-4 .sc-ring-num,.theme-resident-evil-4 .sc-stat strong{font-family:"Cinzel",serif}
+
+/* Hero */
+.theme-resident-evil-4 .sc-hero::before{background:linear-gradient(90deg,#060406f2,#06040680 50%,transparent),linear-gradient(0deg,#060406,#06040600 65%),radial-gradient(700px 400px at 80% 20%,#bd1c1c2b,transparent),radial-gradient(600px 400px at 10% 90%,#4006064d,transparent)}
+.theme-resident-evil-4 .sc-title{font:900 clamp(40px,7vw,80px) "Cinzel",serif;letter-spacing:.06em;color:#f2ebee;text-shadow:0 0 20px #bd1c1caa,2px 2px 4px #000}
+.theme-resident-evil-4 .sc-tagline{font:600 17px "Cinzel",serif;letter-spacing:.08em;text-transform:uppercase;color:#d1b1b1;border-left:2px solid var(--blood);padding-left:12px}
+.theme-resident-evil-4 .sc-back{border-radius:4px;border-color:#bd1c1c66;color:#e6d7d7;background:#000000b3;font-family:"Cinzel",serif}
+.theme-resident-evil-4 .sc-btn{border-radius:4px;background:linear-gradient(135deg,#bd1c1c,#600909);border:1px solid #ff4d4d88;color:#fff;box-shadow:0 4px 20px #bd1c1c66;font:700 15px "Cinzel",serif;letter-spacing:.1em;text-transform:uppercase}
+.theme-resident-evil-4 .sc-btn.ghost{background:#00000088;border-color:#ffffff33;color:#d1c5c5;box-shadow:none}
+.theme-resident-evil-4 .sc-done-pill{border-radius:4px;background:linear-gradient(135deg,#e0b25a,#8a6a1c);color:#0d0b04;font:900 14px "Cinzel",serif;box-shadow:0 0 22px #e0b25a88}
+
+/* Body: graph paper, laser-sight headings */
+.theme-resident-evil-4 .sc-body{background-image:linear-gradient(#e0b25a0b 1px,transparent 1px),linear-gradient(90deg,#e0b25a0b 1px,transparent 1px);background-size:32px 32px}
+.theme-resident-evil-4 .sc-body h3{display:flex;align-items:center;gap:12px;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#f2ebee}
+.theme-resident-evil-4 .sc-body h3::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--blood);box-shadow:0 0 10px 3px #bd1c1c}
+.theme-resident-evil-4 .sc-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#bd1c1c,transparent)}
+.theme-resident-evil-4 .sc-desc{color:#c9bcbc}
+.theme-resident-evil-4 .sc-stats{gap:12px}
+.theme-resident-evil-4 .sc-stat{padding:18px 12px;text-align:center;border-radius:6px;border:2px solid #3a1d1d;background:var(--leather);outline:1px dashed #bd1c1c55;outline-offset:-6px}
+.theme-resident-evil-4 .sc-stat span{color:#9a8a8a}
+.theme-resident-evil-4 .sc-stat strong{font-size:21px;color:var(--amber)}
+.theme-resident-evil-4 .sc-review{border-left-color:var(--blood);background:#bd1c1c12;padding:10px 14px;border-radius:0 8px 8px 0}
+
+/* The merchant's panel */
+.theme-resident-evil-4 .sc-aside{padding:18px;border:2px solid #3a1d1d;background:var(--leather);outline:1px dashed #bd1c1c55;outline-offset:-7px}
+.theme-resident-evil-4 .sc-aside::before{content:"WHAT'RE YA BUYIN'?";font:700 12px "Cinzel",serif;letter-spacing:.18em;color:var(--amber);text-align:center}
+.showcase.theme-resident-evil-4 .sc-cover{border-radius:6px;border:1px solid #bd1c1c66;box-shadow:0 12px 40px #000,0 0 30px #bd1c1c33}
+.theme-resident-evil-4 .sc-details dt{color:var(--amber);font-family:"Cinzel",serif}
+.theme-resident-evil-4 .sc-details dd{color:#f0e6e6}
+
+/* Achievements: inventory cells */
+.theme-resident-evil-4 .sc-ach{border-radius:6px;border:2px solid #3a1d1d;background:var(--leather);outline:1px dashed #bd1c1c55;outline-offset:-8px}
+.showcase.done.theme-resident-evil-4 .sc-ach{border-color:var(--amber);outline-color:#e0b25a77;box-shadow:0 0 40px #e0b25a22}
+.showcase.theme-resident-evil-4:not(.done) .sc-ring .val{stroke:var(--blood);filter:drop-shadow(0 0 8px #bd1c1caa)}
+.theme-resident-evil-4 .sc-ring-num{color:#f0e6e6}
+.theme-resident-evil-4 .sc-complete{border-radius:4px;font-family:"Cinzel",serif;background:#e0b25a1f;border-color:#e0b25a88;color:#f0d28a}
+.theme-resident-evil-4 .sc-chip{border-radius:4px;font:600 12px "Cinzel",serif;letter-spacing:.05em}
+.theme-resident-evil-4 .sc-chip.active{background:#bd1c1c33;border-color:var(--blood);color:#fff}
+.theme-resident-evil-4 .sc-ach-grid{grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:8px}
+.theme-resident-evil-4 .sc-ach-tile{position:relative;overflow:hidden;flex-direction:column;justify-content:center;gap:8px;aspect-ratio:1;padding:10px 8px;text-align:center;border-radius:4px;border:1px solid #ffffff14;background:linear-gradient(180deg,#1a1012,#0e080a)}
+.theme-resident-evil-4 .sc-ach-tile img{width:48px;height:48px;border-radius:3px}
+.theme-resident-evil-4 .sc-ach-tile strong{font-size:11px;line-height:1.25}
+.theme-resident-evil-4 .sc-ach-tile small{position:absolute;inset:0;display:grid;place-items:center;padding:10px;background:#0a0507f4;font-size:11px;opacity:0;transition:opacity .2s}
+.theme-resident-evil-4 .sc-ach-tile:hover small{opacity:1}
+.theme-resident-evil-4 .sc-ach-tile .mark{position:absolute;top:5px;right:7px;font-size:12px;color:var(--blood)}
+.theme-resident-evil-4 .sc-ach-tile.unlocked{border-color:#bd1c1c88;box-shadow:inset 0 0 18px #bd1c1c26}
+.showcase.done.theme-resident-evil-4 .sc-ach-tile.unlocked{border-color:#e0b25a77;box-shadow:inset 0 0 18px #e0b25a1f}
+.showcase.done.theme-resident-evil-4 .sc-ach-tile .mark{color:var(--amber)}
+.theme-resident-evil-4 .sc-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.theme-resident-evil-4 .sc-gallery figure{border-radius:4px;border:2px dashed #bd1c1c66}
+
+@media(max-width:900px){.theme-resident-evil-4 .sc-gallery-grid{grid-template-columns:1fr 1fr}}
+
+/* Library card */
+.showcase-card.theme-resident-evil-4{border-bottom-color:#bd1c1c}
+.showcase-card.theme-resident-evil-4 .card-badge{background:#bd1c1c;border-radius:4px;font-family:"Cinzel",serif}
+.showcase-card.theme-resident-evil-4.done{border-bottom-color:#e0b25a}
+.showcase-card.theme-resident-evil-4.done .card-badge{background:#e0b25a;color:#0d0b04}

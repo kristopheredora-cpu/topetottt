@@ -1,0 +1,85 @@
+/* Batman: Arkham Knight showcase: Detective Mode. Scoped to .theme-batman-arkham-knight.
+   Light-blue on Gotham black. Layout: a case-file panel on the left, an analysis row, achievements as a rogues' gallery of silhouettes. */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-batman-arkham-knight{--ice:#8fd8ff;--ice2:#5cc0ff;background:#04070c;font-family:"Inter",sans-serif}
+.theme-batman-arkham-knight h2,.theme-batman-arkham-knight h3,.theme-batman-arkham-knight .sc-ring-num,.theme-batman-arkham-knight .sc-stat strong{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase}
+
+/* Hero: night fog, a Bat-signal beam, a bat watermark, falling rain */
+.theme-batman-arkham-knight .sc-hero{overflow:hidden}
+.theme-batman-arkham-knight .sc-hero-art{filter:saturate(.8) contrast(1.08) brightness(.82)}
+.theme-batman-arkham-knight .sc-hero::before{background:conic-gradient(from 196deg at 90% -12%,transparent 0 6deg,rgba(143,216,255,.22) 6deg 17deg,transparent 17deg),linear-gradient(90deg,#04070cf2,#04070c88 55%,transparent),linear-gradient(0deg,#04070c 0,#04070c00 64%),radial-gradient(700px 300px at 20% 100%,#8fd8ff22,transparent)}
+.theme-batman-arkham-knight .sc-hero::after{background-image:linear-gradient(104deg,transparent 0 46%,rgba(180,210,255,.16) 49%,transparent 52% 100%);background-size:34px 140px;animation:gotham-rain .8s linear infinite;opacity:.55}
+@keyframes gotham-rain{to{background-position:-34px 140px}}
+.theme-batman-arkham-knight .sc-hero-body{position:relative}
+.theme-batman-arkham-knight .sc-hero-body::before{content:"GOTHAM CITY · NIGHT · DETECTIVE MODE";display:block;margin-bottom:14px;font:600 13px "Barlow Condensed",sans-serif;letter-spacing:.3em;color:var(--ice)}
+.theme-batman-arkham-knight .sc-hero-body::after{content:"";position:absolute;right:max(24px,6%);top:90px;width:min(300px,28vw);aspect-ratio:200/90;opacity:.09;pointer-events:none;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 90'><g fill='%238fd8ff'><path d='M100 24 L104 23 L108 5 L115 21 Q124 23 134 20 Q162 3 198 17 Q190 22 188 32 Q187 44 178 52 Q176 44 170 39 Q166 52 156 60 Q154 50 148 45 Q140 56 126 62 Q122 52 114 50 Q112 62 106 70 L100 82 Z'/><path d='M100 24 L104 23 L108 5 L115 21 Q124 23 134 20 Q162 3 198 17 Q190 22 188 32 Q187 44 178 52 Q176 44 170 39 Q166 52 156 60 Q154 50 148 45 Q140 56 126 62 Q122 52 114 50 Q112 62 106 70 L100 82 Z' transform='matrix(-1 0 0 1 200 0)'/></g></svg>") center/contain no-repeat}
+.theme-batman-arkham-knight .sc-title{font:700 clamp(44px,8vw,88px) "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;text-shadow:0 0 28px #8fd8ff66,0 4px 0 #000}
+.theme-batman-arkham-knight .sc-tagline{font:600 21px "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ice)}
+.theme-batman-arkham-knight .sc-back{border-radius:2px;border-color:#b4d2ff33;color:#cfe0f5;font:600 15px "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.theme-batman-arkham-knight .sc-back:hover{border-color:var(--ice);color:var(--ice)}
+.theme-batman-arkham-knight .sc-btn{border-radius:2px;background:var(--ice);color:#04101c;border:0;box-shadow:0 0 26px #8fd8ff44;font:700 17px "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.theme-batman-arkham-knight .sc-btn.ghost{background:#04070ccc;color:#cfe0f5;border:1px solid #8fd8ff88;box-shadow:none}
+.theme-batman-arkham-knight .sc-done-pill{border-radius:2px;font:700 17px "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;background:#d6f2ff;color:#04101c;box-shadow:0 0 30px #8fd8ff99}
+
+/* Body: a faint grid, like the Batcomputer */
+.theme-batman-arkham-knight .sc-body{background-image:linear-gradient(#8fd8ff08 1px,transparent 1px),linear-gradient(90deg,#8fd8ff08 1px,transparent 1px);background-size:40px 40px}
+.theme-batman-arkham-knight .sc-body h3{display:flex;align-items:center;gap:12px;font-size:26px;letter-spacing:.1em;color:#fff}
+.theme-batman-arkham-knight .sc-body h3::before{content:"";width:16px;height:4px;background:var(--ice);transform:skewX(-30deg)}
+.theme-batman-arkham-knight .sc-desc{color:#a9b6c6}
+.theme-batman-arkham-knight .sc-stat,.theme-batman-arkham-knight .sc-ach,.theme-batman-arkham-knight .sc-details{position:relative;border-radius:0;background:linear-gradient(160deg,#0d141e,#070a10);border:1px solid #1d2a3b}
+.theme-batman-arkham-knight .sc-stat{border-top:2px solid var(--ice)}
+.theme-batman-arkham-knight .sc-stat span{font-size:12px;letter-spacing:.1em;color:#7d8ea4}
+.theme-batman-arkham-knight .sc-stat strong{font-size:28px;letter-spacing:.04em;color:#fff}
+.theme-batman-arkham-knight .sc-review{border-left-color:var(--ice)}
+
+/* Case file */
+.theme-batman-arkham-knight .sc-aside::before{content:"CASE FILE · AK-01";font:600 13px "Barlow Condensed",sans-serif;letter-spacing:.3em;color:var(--ice)}
+.showcase.theme-batman-arkham-knight .sc-cover{border-radius:0;border:1px solid #8fd8ff66;box-shadow:0 22px 60px #000d,0 0 46px #8fd8ff2e}
+.theme-batman-arkham-knight .sc-details{padding:16px;gap:0}
+.theme-batman-arkham-knight .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #8fd8ff14}
+.theme-batman-arkham-knight .sc-details>div:last-child{border-bottom:0}
+.theme-batman-arkham-knight .sc-details dt{color:var(--ice);letter-spacing:.06em}
+.theme-batman-arkham-knight .sc-details dd{margin:0;text-align:right;color:#e6eef8}
+
+/* Achievements: a rogues' gallery. Locked ones are black silhouettes */
+.theme-batman-arkham-knight .sc-ach::before,.theme-batman-arkham-knight .sc-ach::after{content:"";position:absolute;height:3px;width:56px}
+.theme-batman-arkham-knight .sc-ach::before{top:-1px;left:-1px;background:var(--ice)}
+.theme-batman-arkham-knight .sc-ach::after{right:-1px;bottom:-1px;background:var(--ice2)}
+.showcase.done.theme-batman-arkham-knight .sc-ach{border-color:#d6f2ff66;box-shadow:0 0 50px #8fd8ff1f}
+.showcase.theme-batman-arkham-knight:not(.done) .sc-ring .val{stroke:var(--ice);filter:drop-shadow(0 0 7px var(--ice))}
+.showcase.done.theme-batman-arkham-knight .sc-ring .val{stroke:#d6f2ff;filter:drop-shadow(0 0 9px #8fd8ff)}
+.theme-batman-arkham-knight .sc-ring .track{stroke:#b4d2ff16}
+.theme-batman-arkham-knight .sc-ring circle{stroke-width:7}
+.theme-batman-arkham-knight .sc-ring-num{font-size:32px}
+.theme-batman-arkham-knight .sc-complete{border-radius:0;font:700 19px "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase;background:linear-gradient(90deg,#8fd8ff30,#8fd8ff06);border:0;border-left:4px solid #d6f2ff;color:#d6f2ff}
+.theme-batman-arkham-knight .sc-chip{border-radius:0;font:600 16px "Barlow Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.theme-batman-arkham-knight .sc-chip.active{background:var(--ice);border-color:var(--ice);color:#04101c}
+.theme-batman-arkham-knight .sc-ach-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.theme-batman-arkham-knight .sc-ach-tile{position:relative;flex-direction:column;gap:10px;padding:18px 12px;text-align:center;border-radius:0;border:1px solid #1d2a3b;background:#070b12}
+.theme-batman-arkham-knight .sc-ach-tile img,.theme-batman-arkham-knight .sc-ach-tile .noicon{width:64px;height:64px;border-radius:0}
+.theme-batman-arkham-knight .sc-ach-tile strong{font:600 15px "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.theme-batman-arkham-knight .sc-ach-tile .mark{position:absolute;top:8px;right:10px;color:var(--ice)}
+.theme-batman-arkham-knight .sc-ach-tile.unlocked{border-color:#8fd8ff55;background:linear-gradient(180deg,#8fd8ff12,#070b12);box-shadow:inset 0 0 22px #8fd8ff14}
+.showcase.done.theme-batman-arkham-knight .sc-ach-tile.unlocked{border-color:#d6f2ff77}
+.theme-batman-arkham-knight .sc-ach-tile.locked img{filter:brightness(0) opacity(.55);opacity:1}
+.theme-batman-arkham-knight .sc-ach-tile.locked strong{color:#4a6076}
+.theme-batman-arkham-knight .sc-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.theme-batman-arkham-knight .sc-gallery figure{border-radius:0;border-color:#8fd8ff44}
+
+@media(min-width:901px){
+  .theme-batman-arkham-knight .sc-body{grid-template-columns:320px minmax(0,1fr)}
+  .theme-batman-arkham-knight .sc-aside{order:-1;position:sticky;top:24px;align-self:start}
+  .theme-batman-arkham-knight .sc-body>div:first-child{display:flex;flex-direction:column}
+  .theme-batman-arkham-knight .sc-stats{order:-3}
+  .theme-batman-arkham-knight .sc-body>div>h3:first-child{order:-2}
+  .theme-batman-arkham-knight .sc-desc{order:-1}
+}
+
+@media(prefers-reduced-motion:reduce){.theme-batman-arkham-knight .sc-hero::after{animation:none}}
+
+/* Library card */
+.showcase-card.theme-batman-arkham-knight{border-bottom-color:#8fd8ff}
+.showcase-card.theme-batman-arkham-knight .card-badge{border-radius:2px;background:#8fd8ff;color:#04101c;font:700 13px "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.showcase-card.theme-batman-arkham-knight.done{border-bottom-color:#d6f2ff}

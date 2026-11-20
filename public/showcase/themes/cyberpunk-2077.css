@@ -1,0 +1,68 @@
+/* Cyberpunk 2077 showcase: a netrunner terminal. Everything is scoped to .theme-cyberpunk-2077.
+   Layout: readout bar and about text on the left, a sticky "subject file" on the right, achievements as a terminal log. */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-cyberpunk-2077{--pink:#ff2a6d;--yel:#fcee0a;--cy:#00f0ff;background:#05060d;font-family:"Inter",sans-serif}
+.showcase.theme-cyberpunk-2077::after{content:"";position:fixed;inset:0;z-index:5;pointer-events:none;background:repeating-linear-gradient(0deg,#0000 0 2px,#00f0ff09 2px 3px)}
+.theme-cyberpunk-2077 h2,.theme-cyberpunk-2077 h3,.theme-cyberpunk-2077 .sc-ring-num{font-family:"Rajdhani",sans-serif;text-transform:uppercase}
+
+/* Hero */
+.theme-cyberpunk-2077 .sc-hero::before{background:linear-gradient(90deg,#05060df2,#05060d70 55%,transparent),linear-gradient(0deg,#05060d 0,#05060d00 62%),radial-gradient(600px 300px at 85% 0%,#ff2a6d26,transparent),radial-gradient(800px 500px at 8% 100%,#00f0ff1f,transparent)}
+.theme-cyberpunk-2077 .sc-hero-body::before{content:"// NIGHT CITY DATABASE · RECORD LOADED";display:block;margin-bottom:14px;font:12px "Share Tech Mono",monospace;letter-spacing:.22em;color:var(--cy)}
+.theme-cyberpunk-2077 .sc-title{font-family:"Rajdhani",sans-serif;font-weight:700;font-size:clamp(48px,9vw,96px);color:#fff;text-shadow:2px 2px 0 var(--pink),-2px -2px 0 var(--cy)}
+.theme-cyberpunk-2077 .sc-logo{filter:drop-shadow(3px 0 0 #ff2a6d99) drop-shadow(-3px 0 0 #00f0ff99);animation:cp-glitch .7s steps(2,end) 1}
+@keyframes cp-glitch{0%{transform:translate(0)}20%{transform:translate(-7px,2px);clip-path:inset(10% 0 55% 0)}40%{transform:translate(6px,-2px);clip-path:inset(60% 0 8% 0)}60%{transform:translate(-3px,0);clip-path:inset(30% 0 30% 0)}100%{transform:none;clip-path:none}}
+.theme-cyberpunk-2077 .sc-tagline{font:16px "Share Tech Mono",monospace;color:var(--cy)}
+.theme-cyberpunk-2077 .sc-tagline::before{content:"> ";color:var(--yel)}
+.theme-cyberpunk-2077 .sc-back{border-radius:0;border-color:var(--cy);color:var(--cy);font-family:"Share Tech Mono",monospace}
+.theme-cyberpunk-2077 .sc-btn{border-radius:0;background:var(--yel);border:0;color:#000;box-shadow:none;font:700 20px "Rajdhani",sans-serif;letter-spacing:.08em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.theme-cyberpunk-2077 .sc-btn.ghost{background:#000c;color:var(--cy);box-shadow:inset 0 0 0 1px var(--cy)}
+.theme-cyberpunk-2077 .sc-done-pill{border-radius:0;background:linear-gradient(90deg,var(--yel),var(--cy));color:#000;font:700 18px "Rajdhani",sans-serif;box-shadow:0 0 26px #fcee0a88}
+
+/* Body */
+.theme-cyberpunk-2077 .sc-body h3{display:flex;align-items:center;gap:8px;font-size:26px;letter-spacing:.1em;color:#fff}
+.theme-cyberpunk-2077 .sc-body h3::before{content:"//";color:var(--pink)}
+.theme-cyberpunk-2077 .sc-desc{color:#c3cde0;font-size:16px}
+.theme-cyberpunk-2077 .sc-stats{gap:0;margin-bottom:30px;border:1px solid #00f0ff55;background:linear-gradient(180deg,#080c18,#05060d)}
+.theme-cyberpunk-2077 .sc-stat{padding:18px;border:0;border-right:1px solid #00f0ff22;border-radius:0;background:none}
+.theme-cyberpunk-2077 .sc-stat:last-child{border-right:0}
+.theme-cyberpunk-2077 .sc-stat span{font:11px "Share Tech Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#6f86a3}
+.theme-cyberpunk-2077 .sc-stat strong{font:600 28px "Share Tech Mono",monospace;color:var(--yel);text-transform:none}
+.theme-cyberpunk-2077 .sc-review{border-left:3px solid var(--pink);font-family:"Share Tech Mono",monospace;color:#c3cde0}
+.theme-cyberpunk-2077 .sc-aside::before{content:"SUBJECT FILE // V";font:12px "Share Tech Mono",monospace;letter-spacing:.2em;color:var(--yel);padding-bottom:8px;border-bottom:1px solid #fcee0a55}
+.showcase.theme-cyberpunk-2077 .sc-cover{border:0;border-radius:0;box-shadow:0 0 40px #00f0ff26;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px))}
+.theme-cyberpunk-2077 .sc-details{gap:0}
+.theme-cyberpunk-2077 .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #00f0ff33}
+.theme-cyberpunk-2077 .sc-details dt{font:12px "Share Tech Mono",monospace;color:var(--cy)}
+.theme-cyberpunk-2077 .sc-details dd{margin:0;text-align:right;font-size:13px;color:#fff}
+
+/* Achievements: a terminal log */
+.theme-cyberpunk-2077 .sc-ach{padding:0;border-radius:0;border:1px solid #fcee0a55;background:#06070d}
+.theme-cyberpunk-2077 .sc-ach-head{padding:20px 22px;border-bottom:1px dashed #00f0ff44}
+.showcase.theme-cyberpunk-2077:not(.done) .sc-ring .val{stroke:var(--cy);filter:drop-shadow(0 0 6px var(--cy))}
+.theme-cyberpunk-2077 .sc-complete{margin:16px 22px 0;border-radius:0;border-color:var(--yel);color:var(--yel);background:#fcee0a14;font-family:"Share Tech Mono",monospace}
+.theme-cyberpunk-2077 .sc-chips{margin:16px 22px 10px}
+.theme-cyberpunk-2077 .sc-chip{border-radius:0;font:12px "Share Tech Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.theme-cyberpunk-2077 .sc-chip.active{background:var(--yel);border-color:var(--yel);color:#000}
+.theme-cyberpunk-2077 .sc-ach-grid{grid-template-columns:1fr;gap:0}
+.theme-cyberpunk-2077 .sc-ach-tile{padding:10px 22px;border:0;border-top:1px solid #ffffff10;border-radius:0;background:none}
+.theme-cyberpunk-2077 .sc-ach-tile.unlocked{background:linear-gradient(90deg,#fcee0a10,transparent)}
+.theme-cyberpunk-2077 .sc-ach-tile img{border-radius:0}
+.theme-cyberpunk-2077 .sc-ach-tile .mark{font-size:0}
+.theme-cyberpunk-2077 .sc-ach-tile .mark::after{content:"[ -- ]";font:12px "Share Tech Mono",monospace;color:#4a566b}
+.theme-cyberpunk-2077 .sc-ach-tile.unlocked .mark::after{content:"[ OK ]";color:var(--yel)}
+.theme-cyberpunk-2077 .sc-gallery figure{border-radius:0;border:1px solid #00f0ff44;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
+
+@media(min-width:901px){
+  .theme-cyberpunk-2077 .sc-body{grid-template-columns:minmax(0,1fr) 340px;gap:40px}
+  .theme-cyberpunk-2077 .sc-body>div:first-child{display:flex;flex-direction:column}
+  .theme-cyberpunk-2077 .sc-stats{order:-3}
+  .theme-cyberpunk-2077 .sc-body>div>h3:first-child{order:-2}
+  .theme-cyberpunk-2077 .sc-desc{order:-1}
+  .theme-cyberpunk-2077 .sc-aside{position:sticky;top:24px;align-self:start}
+}
+
+/* Library card */
+.showcase-card.theme-cyberpunk-2077{border-bottom-color:#fcee0a}
+.showcase-card.theme-cyberpunk-2077 .card-badge{background:#fcee0a;color:#000;border-radius:0}
+.showcase-card.theme-cyberpunk-2077.done .card-badge{background:linear-gradient(90deg,#fcee0a,#00f0ff)}

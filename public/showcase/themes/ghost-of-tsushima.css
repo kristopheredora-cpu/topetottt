@@ -1,0 +1,71 @@
+/* Ghost of Tsushima showcase: a quiet ink scroll. Scoped to .theme-ghost-of-tsushima.
+   Layout: one centred column. A haiku-style band with the cover and details leads, then the text, stats and a two-column achievement list. */
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-ghost-of-tsushima{--mist:#e4ebed;--seal:#c8372d;--steel:#8fb3c4;background:#0c1014;font-family:"Inter",sans-serif}
+.theme-ghost-of-tsushima h2,.theme-ghost-of-tsushima h3,.theme-ghost-of-tsushima .sc-ring-num,.theme-ghost-of-tsushima .sc-stat strong{font-family:"Shippori Mincho",serif;font-weight:700}
+
+/* Hero */
+.theme-ghost-of-tsushima .sc-hero-art{filter:saturate(.9) contrast(1.05)}
+.theme-ghost-of-tsushima .sc-hero::before{background:linear-gradient(90deg,#0c1014ea,#0c101470 55%,transparent),linear-gradient(0deg,#0c1014 0,#0c101400 62%),radial-gradient(600px 360px at 88% 0%,#e3b04b30,transparent),radial-gradient(900px 260px at 40% 100%,#e4ebed1c,transparent)}
+.theme-ghost-of-tsushima .sc-hero-body::after{content:"対馬";position:absolute;right:clamp(18px,5vw,72px);bottom:34px;writing-mode:vertical-rl;font:700 clamp(52px,9vw,120px)/1 "Shippori Mincho",serif;color:var(--mist);opacity:.16;pointer-events:none}
+.theme-ghost-of-tsushima .sc-title{font-family:"Shippori Mincho",serif;color:var(--mist)}
+.theme-ghost-of-tsushima .sc-tagline{font:500 18px "Shippori Mincho",serif;color:#cdd8dc}
+.theme-ghost-of-tsushima .sc-back{border-radius:0;border-color:#e4ebed40;color:var(--mist)}
+.theme-ghost-of-tsushima .sc-btn{border-radius:0;background:var(--mist);color:#0c1014;box-shadow:0 8px 30px #e4ebed26;font-weight:600}
+.theme-ghost-of-tsushima .sc-btn.ghost{background:#0c1014aa;color:var(--mist);border:1px solid #e4ebed55;box-shadow:none}
+.theme-ghost-of-tsushima .sc-done-pill{border-radius:0;box-shadow:0 0 30px #e3b04b66}
+
+/* Hero text lines up with the column below */
+.theme-ghost-of-tsushima .sc-top,.theme-ghost-of-tsushima .sc-hero-body{padding-left:max(clamp(18px,4vw,56px),calc((100% - 1100px) / 2 + clamp(18px,4vw,56px)))}
+
+/* Body: a single column with a vertical 侍 in the margin */
+.theme-ghost-of-tsushima .sc-body{position:relative;display:flex;flex-direction:column;gap:34px;width:100%;max-width:1100px;margin:0 auto;padding-top:34px}
+.theme-ghost-of-tsushima .sc-body::after{content:"侍";position:absolute;right:-6px;top:150px;writing-mode:vertical-rl;font:700 220px/1 "Shippori Mincho",serif;color:var(--mist);opacity:.045;pointer-events:none}
+.theme-ghost-of-tsushima .sc-body>div:first-child{display:flex;flex-direction:column}
+.theme-ghost-of-tsushima .sc-aside{order:-1;grid-template-columns:190px minmax(0,1fr);gap:30px;align-items:center;padding:24px;border:1px solid #2a3943;background:linear-gradient(90deg,#10171d,transparent)}
+.showcase.theme-ghost-of-tsushima .sc-cover{border-radius:0;border:1px solid #e4ebed66;outline:1px solid #e4ebed22;outline-offset:6px;box-shadow:0 24px 60px #000c,0 0 50px #8fb3c426}
+.theme-ghost-of-tsushima .sc-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 36px}
+.theme-ghost-of-tsushima .sc-details dt{color:var(--steel)}
+.theme-ghost-of-tsushima .sc-details dd{color:var(--mist);font-family:"Shippori Mincho",serif;font-size:16px}
+.theme-ghost-of-tsushima .sc-body h3{display:flex;align-items:center;gap:14px;font-size:22px;color:var(--mist)}
+.theme-ghost-of-tsushima .sc-body h3::before{content:"";width:10px;height:10px;background:var(--seal)}
+.theme-ghost-of-tsushima .sc-body h3::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,#e4ebed88,#e4ebed00);clip-path:polygon(0 0,100% 40%,100% 60%,0 100%)}
+.theme-ghost-of-tsushima .sc-desc{max-width:62ch;color:#c4cfd3;font:17px/2 "Shippori Mincho",serif}
+.theme-ghost-of-tsushima .sc-stats{gap:0;margin:6px 0 34px}
+.theme-ghost-of-tsushima .sc-stat{padding:6px 18px;border:0;border-left:1px solid #e4ebed33;border-radius:0;background:none}
+.theme-ghost-of-tsushima .sc-stat:first-child{border-left:0;padding-left:0}
+.theme-ghost-of-tsushima .sc-stat strong{font-size:30px;color:var(--mist)}
+.theme-ghost-of-tsushima .sc-review{border-left:2px solid var(--seal);color:#c4cfd3;font-family:"Shippori Mincho",serif}
+
+/* Achievements: two quiet columns */
+.theme-ghost-of-tsushima .sc-ach{border-radius:0;background:none;border:0;border-top:1px solid #2a3943;padding:26px 0 0}
+.showcase.done.theme-ghost-of-tsushima .sc-ach{box-shadow:none;border-top-color:#e3b04b}
+.theme-ghost-of-tsushima .sc-ring circle{stroke-width:5}
+.showcase.theme-ghost-of-tsushima:not(.done) .sc-ring .val{stroke:var(--mist);filter:drop-shadow(0 0 5px #e4ebed66)}
+.theme-ghost-of-tsushima .sc-ring .track{stroke:#e4ebed16}
+.theme-ghost-of-tsushima .sc-complete{border-radius:0;font-family:"Shippori Mincho",serif;background:linear-gradient(90deg,#e3b04b38,#e3b04b08);color:#f6dfa4}
+.theme-ghost-of-tsushima .sc-chip{border-radius:0}
+.theme-ghost-of-tsushima .sc-chip.active{background:var(--mist);border-color:var(--mist);color:#0c1014}
+.theme-ghost-of-tsushima .sc-ach-grid{grid-template-columns:1fr 1fr;gap:0 40px}
+.theme-ghost-of-tsushima .sc-ach-tile{border:0;border-bottom:1px solid #2a3943;border-radius:0;background:none;padding:12px 4px}
+.theme-ghost-of-tsushima .sc-ach-tile.unlocked strong{color:var(--mist)}
+.showcase.done.theme-ghost-of-tsushima .sc-ach-tile.unlocked{border-bottom-color:#e3b04b55}
+.showcase.done.theme-ghost-of-tsushima .sc-ach-tile .mark{color:#e3b04b}
+.theme-ghost-of-tsushima .sc-ach-tile img{border-radius:0}
+.theme-ghost-of-tsushima .sc-ach-tile.locked img{filter:grayscale(1) contrast(1.1);opacity:.4}
+.theme-ghost-of-tsushima .sc-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.theme-ghost-of-tsushima .sc-gallery figure{border-radius:0;border:1px solid #e4ebed33}
+
+@media(max-width:900px){
+  .theme-ghost-of-tsushima .sc-aside{grid-template-columns:110px minmax(0,1fr);gap:16px;padding:16px}
+  .theme-ghost-of-tsushima .sc-details{grid-template-columns:1fr}
+  .theme-ghost-of-tsushima .sc-ach-grid,.theme-ghost-of-tsushima .sc-gallery-grid{grid-template-columns:1fr}
+  .theme-ghost-of-tsushima .sc-body::after{display:none}
+}
+
+/* Library card */
+.showcase-card.theme-ghost-of-tsushima{border-bottom-color:#e4ebed66}
+.showcase-card.theme-ghost-of-tsushima .card-badge{background:#c8372d;color:#fff;border-radius:0}
+.showcase-card.theme-ghost-of-tsushima.done{border-bottom-color:#e3b04b}
+.showcase-card.theme-ghost-of-tsushima.done .card-badge{background:linear-gradient(135deg,#f6dfa4,#e3b04b);color:#2a1c05}

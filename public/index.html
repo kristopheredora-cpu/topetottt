@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07050f">
+  <meta name="description" content="TOPETOTTT: a personal Steam gaming portfolio and game tracker.">
+  <title>TOPETOTTT — Gaming Portfolio</title>
+  <script>(function(d){var m=!matchMedia("(prefers-reduced-motion: reduce)").matches;if("IntersectionObserver"in window&&m)d.classList.add("reveal-on");try{if(m&&(location.search.indexOf("intro")>-1||!sessionStorage.getItem("introSeen"))){d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},8000)}}catch(e){}})(document.documentElement)</script>
+  <link rel="stylesheet" href="/styles.css?v=18">
+</head>
+<body data-page="home">
+  <section id="home" class="hero-wrap">
+    <div id="hero" class="hero" aria-roledescription="carousel" aria-label="Games I'm playing">
+      <div id="hero-slides"><div class="h-empty"><p>Loading what I'm playing…</p></div></div>
+      <div class="h-controls">
+        <div id="hero-dots" class="h-dots"></div>
+        <div class="h-arrows"><button id="hero-prev" aria-label="Previous game">‹</button><button id="hero-next" aria-label="Next game">›</button></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="recent" class="section first reveal">
+      <div class="section-heading"><div><h2>Recently Played</h2></div><a class="section-link" href="/library.html?sort=recent">View all →</a></div>
+      <div id="recent-grid" class="rc-row"><p class="muted">Loading recent games…</p></div>
+    </section>
+
+    <section id="library" class="section reveal">
+      <div class="section-heading"><div><h2>Your Library</h2></div><a class="section-link" href="/library.html">Open full library →</a></div>
+      <div class="hl-controls">
+        <div id="hl-chips" class="chips-row">
+          <button class="chip active" data-source="all">All</button>
+          <button class="chip" data-source="owned">Owned</button>
+          <button class="chip" data-source="family">Family Shared</button>
+        </div>
+        <span class="grow"></span>
+        <select id="hl-sort" aria-label="Sort games">
+          <option value="playtime">Sort by: Playtime</option>
+          <option value="name">Sort by: Name</option>
+          <option value="recent">Sort by: Recently played</option>
+        </select>
+        <input id="hl-search" type="search" placeholder="Search your library…" aria-label="Search your library">
+      </div>
+      <div id="hl-strip" class="hl-strip"><p class="muted">Loading your library…</p></div>
+    </section>
+
+    <section id="showcase" class="section reveal">
+      <div class="section-heading"><div><p class="eyebrow">Hand-picked</p><h2>Showcase</h2></div><span id="showcase-count" class="section-note"></span></div>
+      <p class="section-intro">Every game with a custom showcase page. Move your cursor over a slice to expand it.</p>
+      <div id="showcase-grid" class="slices"><p class="muted">Loading showcases…</p></div>
+    </section>
+
+    <section id="insights" class="section reveal">
+      <div class="section-heading"><div><p class="eyebrow">By the numbers</p><h2>Insights</h2></div><span class="section-note">Live from your library</span></div>
+      <div id="insights-grid" class="insights"><p class="muted">Crunching numbers…</p></div>
+    </section>
+  </main>
+
+  <script src="/shell.js?v=18" defer></script>
+  <script src="/app.js" defer></script>
+  <script src="/dialog.js?v=14" defer></script>
+  <script src="/home.js?v=10" defer></script>
+  <script src="/showcase/manifest.js" defer></script>
+  <script src="/showcase/showcase.js?v=17" defer></script>
+</body>
+</html>

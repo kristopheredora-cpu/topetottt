@@ -1,0 +1,77 @@
+/* Detroit: Become Human showcase: the CyberLife interface. Scoped to .theme-detroit-become-human.
+   Layout: a unit-status panel on the left (cover + specs), a four-cell readout row, then achievements as status cells. */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-detroit-become-human{--ice:#cfe6ff;--blu:#2f9bff;--led:#ffd24a;background:#05080d;font-family:"Inter",sans-serif}
+.theme-detroit-become-human h2,.theme-detroit-become-human h3,.theme-detroit-become-human .sc-stat strong,.theme-detroit-become-human .sc-ring-num{font-family:"Exo 2",sans-serif;font-weight:700}
+
+/* Hero: the LED ring above the title */
+.theme-detroit-become-human .sc-hero::before{background:linear-gradient(90deg,#05080df2,#05080d88 55%,transparent),linear-gradient(0deg,#05080d 0,#05080d00 62%),radial-gradient(640px 400px at 88% 6%,#2f9bff33,transparent)}
+.theme-detroit-become-human .sc-brand::before{content:"";display:block;width:16px;height:16px;margin-bottom:16px;border-radius:50%;border:3px solid var(--blu);box-shadow:0 0 14px var(--blu),inset 0 0 8px #2f9bff88;animation:dbh-led 3.2s ease-in-out infinite}
+@keyframes dbh-led{50%{box-shadow:0 0 4px var(--blu),inset 0 0 3px #2f9bff55;opacity:.7}}
+.showcase.done.theme-detroit-become-human .sc-brand::before{border-color:var(--led);box-shadow:0 0 14px var(--led),inset 0 0 8px #ffd24a88;animation:none}
+.theme-detroit-become-human .sc-hero-body::before{content:"▲ DETROIT, 2038 · CYBERLIFE ANDROID DIVISION";display:block;margin-bottom:14px;font:600 12px "Exo 2",sans-serif;letter-spacing:.2em;color:var(--blu)}
+.theme-detroit-become-human .sc-title{font-family:"Exo 2",sans-serif;font-weight:700;color:#fff}
+.theme-detroit-become-human .sc-tagline{font:500 18px "Exo 2",sans-serif;color:var(--ice)}
+.theme-detroit-become-human .sc-back{border-radius:3px;border-color:#cfe6ff44;color:var(--ice)}
+.theme-detroit-become-human .sc-btn{border-radius:3px;background:var(--blu);color:#04101c;box-shadow:0 8px 28px #2f9bff55;font:700 15px "Exo 2",sans-serif}
+.theme-detroit-become-human .sc-btn.ghost{background:transparent;color:#fff;border:1px solid #cfe6ff66;box-shadow:none}
+.theme-detroit-become-human .sc-done-pill{border-radius:3px;font-family:"Exo 2",sans-serif;color:#2a1f00;background:var(--led);box-shadow:0 0 28px #ffd24a77}
+
+/* Panels with bracket corners */
+.theme-detroit-become-human .sc-body h3{display:flex;align-items:center;gap:12px;font-size:21px;color:#fff}
+.theme-detroit-become-human .sc-body h3::before{content:"";width:0;height:0;border-left:9px solid var(--blu);border-top:6px solid transparent;border-bottom:6px solid transparent}
+.theme-detroit-become-human .sc-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#2f9bff88,transparent)}
+.theme-detroit-become-human .sc-desc{color:#b9c6d6}
+.theme-detroit-become-human .sc-stat,.theme-detroit-become-human .sc-ach,.theme-detroit-become-human .sc-details{position:relative;border-radius:2px;background:linear-gradient(160deg,#0b121c,#070b12);border:1px solid #cfe6ff1f}
+.theme-detroit-become-human .sc-stat::before,.theme-detroit-become-human .sc-ach::before,.theme-detroit-become-human .sc-stat::after,.theme-detroit-become-human .sc-ach::after{content:"";position:absolute;width:12px;height:12px;border:2px solid var(--blu)}
+.theme-detroit-become-human .sc-stat::before,.theme-detroit-become-human .sc-ach::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.theme-detroit-become-human .sc-stat::after,.theme-detroit-become-human .sc-ach::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.showcase.done.theme-detroit-become-human .sc-ach{border-color:#ffd24a55;box-shadow:0 0 50px #ffd24a22}
+.showcase.done.theme-detroit-become-human .sc-ach::before,.showcase.done.theme-detroit-become-human .sc-ach::after{border-color:var(--led)}
+.theme-detroit-become-human .sc-stat strong{font-size:22px;color:#fff}
+.theme-detroit-become-human .sc-review{border-left-color:var(--blu)}
+
+/* Unit status panel */
+.theme-detroit-become-human .sc-aside::before{content:"UNIT STATUS · RK-SERIES";font:600 12px "Exo 2",sans-serif;letter-spacing:.18em;color:var(--blu)}
+.showcase.theme-detroit-become-human .sc-cover{border-radius:2px;border:1px solid #cfe6ff66;box-shadow:0 22px 60px #000c,0 0 50px #2f9bff30}
+.theme-detroit-become-human .sc-details{padding:16px;gap:0}
+.theme-detroit-become-human .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #cfe6ff14}
+.theme-detroit-become-human .sc-details>div:last-child{border-bottom:0}
+.theme-detroit-become-human .sc-details dt{color:var(--blu)}
+.theme-detroit-become-human .sc-details dd{margin:0;text-align:right;font-size:13px}
+
+/* Achievements: status cells with an LED */
+.showcase.theme-detroit-become-human:not(.done) .sc-ring .val{stroke:var(--blu);filter:drop-shadow(0 0 6px var(--blu))}
+.theme-detroit-become-human .sc-ring circle{stroke-width:6}
+.theme-detroit-become-human .sc-complete{border-radius:2px;font-family:"Exo 2",sans-serif;background:linear-gradient(90deg,#ffd24a2e,#ffd24a08);border-color:#ffd24a88;color:#ffe9a6}
+.theme-detroit-become-human .sc-chip{border-radius:2px;font-family:"Exo 2",sans-serif}
+.theme-detroit-become-human .sc-chip.active{background:var(--blu);border-color:var(--blu);color:#04101c}
+.theme-detroit-become-human .sc-ach-grid{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.theme-detroit-become-human .sc-ach-tile{position:relative;border-radius:2px;background:#ffffff05;border:1px solid #cfe6ff14;border-top:2px solid #ffffff22}
+.theme-detroit-become-human .sc-ach-tile.unlocked{border-top-color:var(--blu);background:#2f9bff0d}
+.showcase.done.theme-detroit-become-human .sc-ach-tile.unlocked{border-top-color:var(--led);background:#ffd24a0d}
+.theme-detroit-become-human .sc-ach-tile img{border-radius:2px}
+.theme-detroit-become-human .sc-ach-tile .mark{position:absolute;top:8px;right:10px;font-size:0}
+.theme-detroit-become-human .sc-ach-tile .mark::after{content:"";display:block;width:8px;height:8px;border-radius:50%;background:#ffffff26}
+.theme-detroit-become-human .sc-ach-tile.unlocked .mark::after{background:var(--blu);box-shadow:0 0 10px var(--blu)}
+.showcase.done.theme-detroit-become-human .sc-ach-tile.unlocked .mark::after{background:var(--led);box-shadow:0 0 10px var(--led)}
+.theme-detroit-become-human .sc-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.theme-detroit-become-human .sc-gallery figure{border-radius:2px;border-color:#cfe6ff33}
+
+@media(min-width:901px){
+  .theme-detroit-become-human .sc-body{grid-template-columns:320px minmax(0,1fr)}
+  .theme-detroit-become-human .sc-aside{order:-1;position:sticky;top:24px;align-self:start}
+  .theme-detroit-become-human .sc-body>div:first-child{display:flex;flex-direction:column}
+  .theme-detroit-become-human .sc-stats{order:-3}
+  .theme-detroit-become-human .sc-body>div>h3:first-child{order:-2}
+  .theme-detroit-become-human .sc-desc{order:-1}
+}
+
+@media(prefers-reduced-motion:reduce){.theme-detroit-become-human .sc-brand::before{animation:none}}
+
+/* Library card */
+.showcase-card.theme-detroit-become-human{border-bottom-color:#2f9bff}
+.showcase-card.theme-detroit-become-human .card-badge{background:#2f9bff;color:#04101c;border-radius:2px;font-family:"Exo 2",sans-serif}
+.showcase-card.theme-detroit-become-human.done{border-bottom-color:#ffd24a}
+.showcase-card.theme-detroit-become-human.done .card-badge{background:#ffd24a;color:#2a1f00}

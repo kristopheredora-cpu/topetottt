@@ -1,0 +1,88 @@
+/* Call of Duty: Modern Warfare showcase: a tactical operations briefing. Scoped to .theme-call-of-duty-modern-warfare.
+   Palette: gunmetal #070908, olive drab #8fbf4a, night-vision green #39ff8a, tracer orange #ffb02e.
+   Layout: targeting brackets on the hero, an operator file on the left, a scoreboard strip, hex-icon challenges, surveillance-camera screenshots. */
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+.showcase.theme-call-of-duty-modern-warfare{--olive:#8fbf4a;--nvg:#39ff8a;--orange:#ffb02e;--steel:#0c100d;background:#070908;font-family:"Inter",sans-serif}
+.theme-call-of-duty-modern-warfare h2,.theme-call-of-duty-modern-warfare h3,.theme-call-of-duty-modern-warfare .sc-ring-num,.theme-call-of-duty-modern-warfare .sc-stat strong{font-family:"Saira Condensed",sans-serif;text-transform:uppercase}
+
+/* Hero: desaturated, with targeting brackets in the corners */
+.theme-call-of-duty-modern-warfare .sc-hero-art{filter:grayscale(.35) contrast(1.12) brightness(.8)}
+.theme-call-of-duty-modern-warfare .sc-hero::before{background:linear-gradient(90deg,#070908f2,#07090880 55%,transparent),linear-gradient(0deg,#070908 0,#07090800 62%),radial-gradient(700px 360px at 8% 100%,#39ff8a18,transparent),radial-gradient(500px 300px at 92% 0%,#ffb02e14,transparent)}
+.theme-call-of-duty-modern-warfare .sc-hero::after{background:
+  linear-gradient(#8fbf4a,#8fbf4a) left 26px top 74px/42px 2px no-repeat,linear-gradient(#8fbf4a,#8fbf4a) left 26px top 74px/2px 42px no-repeat,
+  linear-gradient(#8fbf4a,#8fbf4a) right 26px top 74px/42px 2px no-repeat,linear-gradient(#8fbf4a,#8fbf4a) right 26px top 74px/2px 42px no-repeat,
+  linear-gradient(#8fbf4a,#8fbf4a) left 26px bottom 26px/42px 2px no-repeat,linear-gradient(#8fbf4a,#8fbf4a) left 26px bottom 26px/2px 42px no-repeat,
+  linear-gradient(#8fbf4a,#8fbf4a) right 26px bottom 26px/42px 2px no-repeat,linear-gradient(#8fbf4a,#8fbf4a) right 26px bottom 26px/2px 42px no-repeat}
+.theme-call-of-duty-modern-warfare .sc-hero-body::before{content:"// OPERATION BRIEFING · CLEARANCE: ALPHA · INFINITY WARD";display:block;margin-bottom:14px;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.2em;color:var(--olive)}
+.theme-call-of-duty-modern-warfare .sc-title{font:700 clamp(48px,8.5vw,92px) "Saira Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#f1f4ee;text-shadow:0 4px 0 #000,0 0 30px #39ff8a33}
+.theme-call-of-duty-modern-warfare .sc-tagline{font:500 15px "IBM Plex Mono",monospace;letter-spacing:.04em;color:#cfd8c8;padding-left:12px;border-left:3px solid var(--orange)}
+.theme-call-of-duty-modern-warfare .sc-back{border-radius:0;border-color:#8fbf4a66;color:var(--olive);font:600 14px "IBM Plex Mono",monospace;background:#000b}
+.theme-call-of-duty-modern-warfare .sc-btn{border-radius:0;background:var(--olive);color:#0a0f06;border:0;box-shadow:0 0 24px #8fbf4a44;font:700 18px "Saira Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
+.theme-call-of-duty-modern-warfare .sc-btn.ghost{background:#000c;color:var(--olive);box-shadow:inset 0 0 0 1px #8fbf4a88}
+.theme-call-of-duty-modern-warfare .sc-done-pill{border-radius:0;background:var(--orange);color:#201200;font:700 18px "Saira Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 26px #ffb02e77}
+
+/* Body */
+.theme-call-of-duty-modern-warfare .sc-body{counter-reset:sec}
+.theme-call-of-duty-modern-warfare .sc-body h3{display:flex;align-items:center;gap:12px;font-size:26px;letter-spacing:.1em;color:#f1f4ee}
+.theme-call-of-duty-modern-warfare .sc-body h3::before{counter-increment:sec;content:"0" counter(sec) " /";font:600 13px "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--orange)}
+.theme-call-of-duty-modern-warfare .sc-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#8fbf4a66,transparent)}
+.theme-call-of-duty-modern-warfare .sc-desc{padding-left:16px;border-left:2px solid #8fbf4a55;color:#b9c4b2;font-size:16px}
+.theme-call-of-duty-modern-warfare .sc-stats{gap:10px}
+.theme-call-of-duty-modern-warfare .sc-stat{border-radius:0;border:1px solid #1d2a20;border-bottom:3px solid var(--orange);background:linear-gradient(180deg,#0e130f,#080b09)}
+.theme-call-of-duty-modern-warfare .sc-stat span{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#6f7d6a}
+.theme-call-of-duty-modern-warfare .sc-stat strong{font-size:30px;letter-spacing:.04em;color:#f1f4ee}
+.theme-call-of-duty-modern-warfare .sc-review{border-left:3px solid var(--orange);font-family:"IBM Plex Mono",monospace;color:#cfd8c8}
+
+/* Operator file */
+.theme-call-of-duty-modern-warfare .sc-aside::before{content:"OPERATOR FILE · CLASSIFIED";font:600 12px "IBM Plex Mono",monospace;letter-spacing:.18em;color:var(--olive);padding-bottom:8px;border-bottom:1px solid #8fbf4a55}
+.showcase.theme-call-of-duty-modern-warfare .sc-cover{border-radius:0;border:1px solid #8fbf4a66;outline:1px solid #8fbf4a22;outline-offset:7px;box-shadow:0 22px 60px #000d,0 0 40px #39ff8a1c}
+.theme-call-of-duty-modern-warfare .sc-details{gap:0}
+.theme-call-of-duty-modern-warfare .sc-details>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #8fbf4a1f}
+.theme-call-of-duty-modern-warfare .sc-details dt{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--olive)}
+.theme-call-of-duty-modern-warfare .sc-details dd{margin:0;padding:1px 8px;text-align:right;font:500 13px "IBM Plex Mono",monospace;color:#f1f4ee;background:#ffffff0d}
+
+/* Challenges */
+.theme-call-of-duty-modern-warfare .sc-ach{border-radius:0;background:linear-gradient(160deg,#0d120e,#070908);border:1px solid #1d2a20;border-left:3px solid var(--olive)}
+.showcase.done.theme-call-of-duty-modern-warfare .sc-ach{border-color:#ffb02e66;border-left-color:var(--orange);box-shadow:0 0 50px #ffb02e18}
+.showcase.theme-call-of-duty-modern-warfare:not(.done) .sc-ring .val{stroke:var(--nvg);filter:drop-shadow(0 0 7px #39ff8a99)}
+.theme-call-of-duty-modern-warfare .sc-ring .track{stroke:#8fbf4a1c}
+.theme-call-of-duty-modern-warfare .sc-ring circle{stroke-width:7}
+.theme-call-of-duty-modern-warfare .sc-ring-num{font-size:32px}
+.theme-call-of-duty-modern-warfare .sc-complete{border-radius:0;font:700 20px "Saira Condensed",sans-serif;letter-spacing:.1em;text-transform:uppercase;background:linear-gradient(90deg,#ffb02e2e,#ffb02e06);border:0;border-left:4px solid var(--orange);color:#ffc766}
+.theme-call-of-duty-modern-warfare .sc-chip{border-radius:0;font:500 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.theme-call-of-duty-modern-warfare .sc-chip.active{background:var(--olive);border-color:var(--olive);color:#0a0f06}
+.theme-call-of-duty-modern-warfare .sc-ach-grid{grid-template-columns:1fr 1fr;gap:8px}
+.theme-call-of-duty-modern-warfare .sc-ach-tile{border-radius:0;border:1px solid #1d2a20;background:#0a0e0b}
+.theme-call-of-duty-modern-warfare .sc-ach-tile.unlocked{border-color:#39ff8a55;background:linear-gradient(90deg,#39ff8a12,transparent)}
+.showcase.done.theme-call-of-duty-modern-warfare .sc-ach-tile.unlocked{border-color:#ffb02e55;background:linear-gradient(90deg,#ffb02e12,transparent)}
+.theme-call-of-duty-modern-warfare .sc-ach-tile img{border-radius:0;clip-path:polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%)}
+.theme-call-of-duty-modern-warfare .sc-ach-tile.locked img{filter:grayscale(1) brightness(.8);opacity:.5}
+.theme-call-of-duty-modern-warfare .sc-ach-tile .mark{font-size:0}
+.theme-call-of-duty-modern-warfare .sc-ach-tile .mark::after{content:"INCOMPLETE";padding:2px 7px;font:600 10px "IBM Plex Mono",monospace;letter-spacing:.08em;color:#5f6b61;border:1px solid #2a352c}
+.theme-call-of-duty-modern-warfare .sc-ach-tile.unlocked .mark::after{content:"COMPLETE";color:var(--nvg);border-color:var(--nvg)}
+.showcase.done.theme-call-of-duty-modern-warfare .sc-ach-tile.unlocked .mark::after{color:var(--orange);border-color:var(--orange)}
+
+/* Screenshots: surveillance feeds */
+.theme-call-of-duty-modern-warfare .sc-gallery-grid{counter-reset:cam}
+.theme-call-of-duty-modern-warfare .sc-gallery figure{position:relative;counter-increment:cam;border-radius:0;border:1px solid #8fbf4a44;filter:grayscale(.2) contrast(1.06)}
+.theme-call-of-duty-modern-warfare .sc-gallery figure::after{content:"CAM-0" counter(cam);position:absolute;left:12px;top:10px;z-index:2;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--nvg);text-shadow:0 0 6px #000}
+.theme-call-of-duty-modern-warfare .sc-gallery figure::before{content:"";position:absolute;right:12px;top:12px;z-index:2;width:9px;height:9px;border-radius:50%;background:#ff3b30;box-shadow:0 0 10px #ff3b30;animation:cod-rec 1.2s steps(1,end) infinite}
+@keyframes cod-rec{50%{opacity:.15}}
+@media(prefers-reduced-motion:reduce){.theme-call-of-duty-modern-warfare .sc-gallery figure::before{animation:none}}
+
+@media(min-width:901px){
+  .theme-call-of-duty-modern-warfare .sc-body{grid-template-columns:340px minmax(0,1fr)}
+  .theme-call-of-duty-modern-warfare .sc-aside{order:-1;position:sticky;top:24px;align-self:start}
+  .theme-call-of-duty-modern-warfare .sc-body>div:first-child{display:flex;flex-direction:column}
+  .theme-call-of-duty-modern-warfare .sc-stats{order:-3}
+  .theme-call-of-duty-modern-warfare .sc-body>div>h3:first-child{order:-2}
+  .theme-call-of-duty-modern-warfare .sc-desc{order:-1}
+}
+@media(max-width:900px){.theme-call-of-duty-modern-warfare .sc-ach-grid{grid-template-columns:1fr}}
+
+/* Library card */
+.showcase-card.theme-call-of-duty-modern-warfare{border-bottom-color:#8fbf4a}
+.showcase-card.theme-call-of-duty-modern-warfare .card-badge{background:#8fbf4a;color:#0a0f06;border-radius:0;font-family:"Saira Condensed",sans-serif;font-size:14px;letter-spacing:.06em}
+.showcase-card.theme-call-of-duty-modern-warfare.done{border-bottom-color:#ffb02e}
+.showcase-card.theme-call-of-duty-modern-warfare.done .card-badge{background:#ffb02e;color:#201200}
