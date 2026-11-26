@@ -43,7 +43,7 @@ function heroSlide(game, kicker, i) {
         <button class="button button-secondary" data-act="open" data-appid="${id}">View Details</button>
         <span class="h-menu-wrap">
           <button class="button button-secondary h-more" data-act="more" aria-label="More options" aria-expanded="false">⋯</button>
-          <div class="h-menu"><a href="https://store.steampowered.com/app/${id}/" target="_blank" rel="noreferrer">Steam store ↗</a><button data-act="edit" data-appid="${id}">Edit tracker entry</button></div>
+          <div class="h-menu"><a href="https://store.steampowered.com/app/${id}/" target="_blank" rel="noreferrer">Steam store ↗</a><button class="owner-only" data-act="edit" data-appid="${id}">Edit tracker entry</button></div>
         </span>
       </div>
     </div>

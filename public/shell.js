@@ -14,6 +14,8 @@
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     pad: '<rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 10v5M4.5 12.5h5M16 11h.01M18.5 14h.01"/>',
     achievements: '<circle cx="12" cy="14" r="5"/><path d="M9 3h6l-1.5 5M9 3l1.5 5M9.5 17.5 8 22l4-2 4 2-1.5-4.5"/>',
+    history: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
     check: '<path d="m5 12 5 5L20 7"/>',
     pen: '<path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4"/>'
   };
@@ -26,6 +28,7 @@
     ["showcase", "/index.html#showcase", "Showcase"],
     ["top5", "/top5.html", "Top 5"],
     ["achievements", "/achievements.html", "Achievements"],
+    ["history", "/history.html", "History"],
     ["tracker", "/tracker.html", "Tracker"]
   ];
   const navLinks = NAV.map(([id, href, label]) =>
@@ -45,7 +48,7 @@
         <div id="gs-results" class="gs-results"></div>
       </form>
       <div class="top-actions">
-        <button id="refresh-top" class="round-btn" title="Refresh Steam data" aria-label="Refresh Steam data">${icon("refresh")}</button>
+        <button id="refresh-top" class="round-btn owner-only" title="Refresh Steam data" aria-label="Refresh Steam data">${icon("refresh")}</button>
         <div class="profile-wrap">
           <button id="pt-btn" class="profile-trigger" aria-expanded="false" aria-controls="pp-panel" aria-haspopup="true">
             <img id="pt-avatar" src="" alt="">
@@ -66,8 +69,10 @@
               <div class="pp-stat">${icon("pen")}<div><span>Reviews written</span><strong id="st-reviews">—</strong></div></div>
             </div>
             <div class="pp-actions">
-              <button id="refresh-btn" class="pp-action">${icon("refresh")}Refresh Steam Data</button>
+              <button id="refresh-btn" class="pp-action owner-only">${icon("refresh")}Refresh Steam Data</button>
               <a class="pp-action" href="/library.html">${icon("pad")}Browse Library</a>
+              <button id="owner-login" class="pp-action visitor-only" type="button">${icon("lock")}Owner login</button>
+              <button id="owner-logout" class="pp-action owner-only" type="button">${icon("lock")}Log out of owner mode</button>
             </div>
             <div class="pp-foot">Last updated <b id="pp-updated">—</b></div>
           </div>
@@ -147,6 +152,20 @@
     $id("st-ach-sub").textContent = `${pct}% of ${total.toLocaleString()} in my showcased games`;
     $id("st-ach-bar").style.width = `${pct}%`;
   }
+
+  // ---- Owner mode. Everyone can browse; only the owner (who knows ADMIN_TOKEN) can change anything.
+  // The class below only shows or hides the edit buttons. The server is what actually refuses changes without the token.
+  $id("owner-login").addEventListener("click", async () => {
+    const token = (prompt("Owner token:") || "").trim();
+    if (!token) return;
+    try {
+      const response = await fetch("/api/auth", { headers: { "x-admin-token": token } });
+      if (!response.ok) throw new Error((await response.json().catch(() => ({}))).error || "That token isn't right.");
+      sessionStorage.setItem("portfolioAdminToken", token);
+      location.reload();
+    } catch (error) { toast(error.message); }
+  });
+  $id("owner-logout").addEventListener("click", () => { sessionStorage.removeItem("portfolioAdminToken"); location.reload(); });
 
   // ---- Global search
   const gs = $id("gsearch"), gsInput = $id("gs-input"), gsResults = $id("gs-results");

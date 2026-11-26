@@ -29,6 +29,7 @@ Status values: Idea, In progress, Live, Live + photos, Photo only.
 | Library | `library.html` | Search, sort, filters, full library (also opens from the menu filters) |
 | Top 5 | `top5.html` | Top 5 list with a live preview |
 | Tracker | `tracker.html` | Summary, tabs, star ratings, reviews, "pick my next game" |
+| History | `history.html` | Playtime history: daily/weekly charts, activity calendar, top games (needs the server snapshots) |
 | Achievements | `achievements.html` | Achievement progress across every game, perfect games, latest unlocks |
 
 The top bar (search + profile pop-down), slide-out menu, footer and game dialog come from `shell.js`. Edit it once and every page updates.

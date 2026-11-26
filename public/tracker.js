@@ -68,7 +68,7 @@ function trItem({ appid, entry, game }) {
       ${entry.review ? `<p class="tr-review">${escapeHtml(entry.review)}</p>` : ""}
       ${entry.notes ? `<p class="tr-notes"><strong>Notes</strong> ${escapeHtml(entry.notes)}</p>` : ""}
       <div class="tr-foot"><span class="tr-dim">${escapeHtml(trAgo(entry.updatedAt))}</span>
-        <span class="tr-actions"><button class="button button-secondary" data-act="open" data-appid="${appid}">Details</button><button class="button button-secondary" data-act="edit" data-appid="${appid}">Edit entry</button></span></div>
+        <span class="tr-actions"><button class="button button-secondary" data-act="open" data-appid="${appid}">Details</button><button class="button button-secondary owner-only" data-act="edit" data-appid="${appid}">Edit entry</button></span></div>
     </div></article>`;
 }
 
@@ -135,7 +135,7 @@ let trSpinning = false;
   const img = document.getElementById("tr-slot-img"), name = document.getElementById("tr-slot-name"), result = document.getElementById("tr-pick-result");
   const show = (game) => {
     const [first, ...rest] = trPoster(game);
-    img.style.visibility = "visible"; img.dataset.fb = rest.join("|"); img.onerror = () => new Function(TR_FALLBACK).call(img); img.src = first;
+    img.style.visibility = "visible"; img.dataset.fb = rest.join("|"); img.onerror = () => { const f = (img.dataset.fb || "").split("|").filter(Boolean); if (f.length) { img.src = f.shift(); img.dataset.fb = f.join("|"); } else img.style.visibility = "hidden"; }; img.src = first;
     name.textContent = game.name;
   };
   btn.addEventListener("click", () => {
@@ -147,7 +147,7 @@ let trSpinning = false;
       show(target);
       document.querySelector(".tr-slot").classList.add("landed");
       result.innerHTML = `<p class="eyebrow">Tonight's pick</p><h3>${escapeHtml(target.name)}</h3><p class="muted">${hours(target.playtimeForever)} played so far</p>
-        <div class="tr-actions"><button class="button button-primary" data-pick="open">View details</button><button class="button button-secondary" data-pick="edit">Edit entry</button></div>`;
+        <div class="tr-actions"><button class="button button-primary" data-pick="open">View details</button><button class="button button-secondary owner-only" data-pick="edit">Edit entry</button></div>`;
       result.querySelector('[data-pick="open"]').onclick = () => openGame(target.appid);
       result.querySelector('[data-pick="edit"]').onclick = () => trEdit(target.appid);
       trSpinning = false; btn.disabled = false; btn.textContent = "🎲 Spin again";

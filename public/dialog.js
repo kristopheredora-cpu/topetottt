@@ -50,6 +50,17 @@ openGame = async function (appid) {
   const dialog = $("#game-dialog");
   const cdn = `https://cdn.akamai.steamstatic.com/steam/apps/${appid}`;
   const status = trackerStatus(appid);
+  const owner = document.documentElement.classList.contains("is-owner");
+  const tracked = Boolean(state.tracker[String(appid)]);
+  const rated = typeof entry.rating === "number";
+  const visitorPanel = `<section class="gd-form gd-readonly">
+          <h3>My tracker entry</h3>
+          ${tracked ? `<div class="gd-ro-row"><span class="pill ${entry.status}">${escapeHtml(statusLabels[entry.status] || entry.status)}</span>
+            ${rated ? `<span class="tr-stars" style="--r:${entry.rating / 10}" role="img" aria-label="Rated ${entry.rating} out of 10">★★★★★</span><b>${entry.rating}/10</b>` : '<span class="muted">Not rated</span>'}</div>
+            ${entry.review ? `<p class="gd-ro-review">${escapeHtml(entry.review)}</p>` : ""}
+            ${entry.notes ? `<p class="gd-ro-notes"><strong>Notes</strong> ${escapeHtml(entry.notes)}</p>` : ""}` : '<p class="muted">I haven\'t tracked this game yet.</p>'}
+          <p class="muted gd-ro-foot">This site is view-only. Only its owner can edit.</p>
+        </section>`;
   $("#dialog-content").innerHTML = `
     <div class="gd">
       <header class="gd-hero">
@@ -71,20 +82,20 @@ openGame = async function (appid) {
       </header>
       <div class="gd-body">
         <section class="gd-main"><div id="achievement-panel" class="gd-ach"><p class="muted">Loading achievement data…</p></div></section>
-        <form id="tracker-form" class="dialog-form gd-form">
+        ${owner ? `        <form id="tracker-form" class="dialog-form gd-form">
           <h3>Your tracker entry</h3>
           <div class="gd-seg" role="radiogroup" aria-label="Status">
             ${Object.entries(statusLabels).map(([key, label]) => `<label class="gd-opt"><input type="radio" name="status" value="${key}" ${entry.status === key ? "checked" : ""}><span><i class="dot s-${key}"></i>${label}</span></label>`).join("")}
           </div>
           <div class="form-row">
             <label>Rating (0–10)<input name="rating" type="number" min="0" max="10" step="0.5" value="${entry.rating ?? ""}" placeholder="Not rated"></label>
-            <label>Admin token<input name="adminToken" type="password" autocomplete="current-password" placeholder="Required to save" value=""></label>
+            <label class="gd-token">Admin token<input name="adminToken" type="password" autocomplete="current-password" placeholder="Only if not logged in as owner" value=""></label>
           </div>
           <label>Review<textarea name="review" maxlength="3000" placeholder="What did you think of this game?">${escapeHtml(entry.review || "")}</textarea></label>
           <label>Personal notes<textarea name="notes" maxlength="3000" placeholder="Progress, endings, DLC, things to remember…">${escapeHtml(entry.notes || "")}</textarea></label>
           <button class="button button-primary" type="submit">Save tracker entry</button>
           <p class="muted">The admin token is only sent with the save request. It is held in this tab's session after a successful save.</p>
-        </form>
+        </form>` : visitorPanel}
       </div>
     </div>`;
   dialog.showModal();

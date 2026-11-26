@@ -13,7 +13,7 @@ function loadThemeCss(href) {
 
 function registerShowcase(appid, cfg) {
   SHOWCASES[appid] = cfg;
-  loadThemeCss(cfg.css ? `${cfg.css}?v=17` : cfg.css); // ?v= makes browsers pick up redesigned themes
+  loadThemeCss(cfg.css ? `${cfg.css}?v=19` : cfg.css); // ?v= makes browsers pick up redesigned themes
   document.dispatchEvent(new CustomEvent("showcase:changed"));
 }
 
@@ -51,7 +51,7 @@ gameImage = function (game) {
 const scLink = document.createElement("link");
 scLink.rel = "stylesheet"; scLink.href = "/showcase/showcase.css";
 document.head.append(scLink);
-loadThemeCss("/showcase/intros.css?v=17"); // opening animations for each game page
+loadThemeCss("/showcase/intros.css?v=19"); // opening animations for each game page
 document.body.insertAdjacentHTML("beforeend", '<dialog id="showcase-dialog" class="showcase" aria-label="Game showcase"></dialog>');
 
 // Renders the Showcase section on the home page as expanding slices
@@ -156,7 +156,7 @@ async function openShowcase(appid) {
         <div class="sc-brand">${artImg("sc-logo", media("logo.png"), steamArt(appid, "logo.png"))}<h2 class="sc-title">${escapeHtml(cfg.title)}</h2></div>
         <p class="sc-tagline">${escapeHtml(cfg.tagline)}</p>
         <div class="sc-actions">
-          <button class="sc-btn" id="sc-edit">Edit tracker entry</button>
+          <button class="sc-btn owner-only" id="sc-edit">Edit tracker entry</button>
           <a class="sc-btn ghost" href="https://store.steampowered.com/app/${appid}/" target="_blank" rel="noreferrer">Steam store ↗</a>
           <span id="sc-done-slot"></span>
         </div>
